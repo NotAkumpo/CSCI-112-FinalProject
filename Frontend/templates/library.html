@@ -1,0 +1,696 @@
+{% extends "base.html" %}
+
+{% block title %}My Library - GameStore{% endblock %}
+
+{% block content %}
+<style>
+    .library-hero {
+        background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--tertiary-dark) 100%);
+        border-bottom: 2px solid var(--border-color);
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .library-hero h1 {
+        color: var(--accent-secondary);
+    }
+
+    .library-controls {
+        display: flex;
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .view-toggle {
+        display: flex;
+        gap: var(--spacing-sm);
+        background-color: var(--tertiary-dark);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: 2px;
+    }
+
+    .view-btn {
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        cursor: pointer;
+        border-radius: 3px;
+        transition: all var(--transition-fast);
+    }
+
+    .view-btn.active {
+        background-color: var(--card-bg);
+        color: var(--accent-secondary);
+    }
+
+    .search-filter {
+        flex: 1;
+        min-width: 200px;
+    }
+
+    .search-filter input {
+        width: 100%;
+        padding: var(--spacing-md);
+        background-color: var(--tertiary-dark);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+    }
+
+    .sort-select {
+        padding: var(--spacing-md);
+        background-color: var(--tertiary-dark);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        cursor: pointer;
+    }
+
+    /* Grid View */
+    .library-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .library-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: all var(--transition-normal);
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+
+    .library-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--accent-secondary);
+    }
+
+    .playtime-badge {
+        background-color: rgba(0, 0, 0, 0.85);
+        color: var(--accent-success);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--radius-sm);
+        font-size: 0.7rem;
+        font-weight: 700;
+        display: inline-block;
+    }
+
+    .library-card-content {
+        padding: var(--spacing-md);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .library-card-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: var(--spacing-xs);
+        color: var(--text-primary);
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .library-card-status {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .installed-badge {
+        display: inline-block;
+        background-color: rgba(63, 185, 80, 0.2);
+        color: var(--accent-success);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin-top: auto;
+    }
+
+    .not-installed-badge {
+        display: inline-block;
+        background-color: rgba(210, 153, 34, 0.2);
+        color: var(--accent-warning);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin-top: auto;
+    }
+
+    /* List View */
+    .library-list {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .library-list-item {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: var(--spacing-lg);
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-md);
+        align-items: center;
+        transition: all var(--transition-normal);
+        cursor: pointer;
+    }
+
+    .library-list-item:hover {
+        border-color: var(--accent-secondary);
+        box-shadow: var(--shadow-md);
+    }
+
+    .list-game-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .list-game-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-primary);
+    }
+
+    .list-game-stats {
+        display: flex;
+        gap: var(--spacing-lg);
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    .list-game-actions {
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+
+    .btn-action-danger {
+        padding: var(--spacing-sm) var(--spacing-md);
+        background-color: rgba(218, 54, 51, 0.1);
+        border: 1px solid var(--accent-danger);
+        border-radius: var(--radius-sm);
+        color: var(--accent-danger);
+        cursor: pointer;
+        transition: background-color var(--transition-fast);
+    }
+
+    .btn-action-danger:hover {
+        background-color: var(--accent-danger);
+        color: white;
+    }
+
+    .no-games {
+        text-align: center;
+        padding: var(--spacing-2xl);
+        color: var(--text-secondary);
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+    }
+
+    .no-games-icon {
+        font-size: 4rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .stats-bar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .stat-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-lg);
+        text-align: center;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--accent-secondary);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    .funds-section {
+        display: flex;
+        gap: var(--spacing-md);
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .funds-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .funds-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    .funds-amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-success);
+    }
+
+    .btn-add-funds {
+        padding: var(--spacing-md) var(--spacing-xl);
+        background-color: var(--accent-primary);
+        color: white;
+        border: none;
+        border-radius: var(--radius-md);
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .btn-add-funds:hover {
+        background-color: var(--accent-secondary);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    @media (max-width: 768px) {
+        .funds-section {
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .btn-add-funds {
+            width: 100%;
+        }
+        .library-grid {
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        }
+
+        .library-list-item {
+            grid-template-columns: 80px 1fr;
+            gap: var(--spacing-md);
+        }
+
+        .list-game-actions {
+            grid-column: 1 / -1;
+            justify-content: flex-start;
+        }
+
+        .stats-bar {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<div class="library-hero">
+    <div class="container">
+        <h1>My Library</h1>
+        <p>Manage and explore your game collection</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Statistics -->
+    <div class="stats-bar">
+        <div class="stat-card">
+            <div class="stat-value" id="totalGames">0</div>
+            <div class="stat-label">Games Owned</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="totalPlaytime">0h</div>
+            <div class="stat-label">Total Playtime</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="installedCount">0</div>
+            <div class="stat-label">Installed</div>
+        </div>
+    </div>
+
+    <!-- Add Funds Section -->
+    <div class="funds-section">
+        <div class="funds-info">
+            <span class="funds-label">Account Balance</span>
+            <span class="funds-amount" id="walletBalance">₱0.00</span>
+        </div>
+        <button class="btn-add-funds" onclick="openAddFundsModal()">Add Funds</button>
+    </div>
+
+    <!-- Controls -->
+    <div class="library-controls">
+        <div class="search-filter">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search your library..."
+                onkeyup="filterLibrary()"
+            >
+        </div>
+
+        <select id="sortBy" class="sort-select" onchange="sortLibrary()">
+            <option value="recent">Recently Played</option>
+            <option value="alphabetical">A-Z</option>
+            <option value="playtime">Most Playtime</option>
+            <option value="purchased">Recently Purchased</option>
+        </select>
+
+        <select id="statusFilter" class="sort-select" onchange="filterLibrary()">
+            <option value="">All Games</option>
+            <option value="installed">Installed</option>
+            <option value="not-installed">Not Installed</option>
+        </select>
+
+        <div class="view-toggle">
+            <button class="view-btn active" onclick="switchView('grid')" title="Grid view">⊞</button>
+            <button class="view-btn" onclick="switchView('list')" title="List view">≡</button>
+        </div>
+    </div>
+
+    <!-- Library Grid (Default) -->
+    <div id="libraryGrid" class="library-grid">
+        <!-- Cards will be rendered here -->
+    </div>
+
+    <!-- Library List (Hidden by default) -->
+    <div id="libraryList" class="library-list" style="display: none;">
+        <!-- List items will be rendered here -->
+    </div>
+
+    <!-- Empty State -->
+    <div id="noGames" class="no-games" style="display: none;">
+        <div class="no-games-icon">🎮</div>
+        <h3>Your library is empty</h3>
+        <p>Head to the store to find and purchase games!</p>
+        <a href="/store" class="btn btn-primary" style="margin-top: var(--spacing-lg); display: inline-block;">Browse Store</a>
+    </div>
+
+    <!-- Add Funds Modal -->
+    <div id="addFundsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Funds to Account</h2>
+                <button class="modal-close" onclick="closeAddFundsModal()">×</button>
+            </div>
+            <div style="padding: var(--spacing-lg) 0;">
+                <div class="form-group">
+                    <label class="form-label">Amount (₱)</label>
+                    <input
+                        type="number"
+                        id="fundsAmount"
+                        class="form-input"
+                        placeholder="Enter amount..."
+                        min="10"
+                        step="10"
+                    >
+                </div>
+                <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg);">
+                    <button class="btn btn-primary" style="flex: 1;" onclick="processAddFunds()">Add Funds</button>
+                    <button class="btn btn-secondary" style="flex: 1;" onclick="closeAddFundsModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let allLibraryGames = [];
+    let currentView = 'grid';
+    let filteredLibrary = [];
+
+    // Fetch user's library from API
+    async function fetchLibrary() {
+        try {
+            const response = await fetch('/api/user/library');
+            if (!response.ok) {
+                throw new Error('Failed to fetch library');
+            }
+            const data = await response.json();
+            allLibraryGames = data.games || [];
+            filteredLibrary = [...allLibraryGames];
+            renderLibrary();
+        } catch (error) {
+            console.error('Error fetching library:', error);
+            document.getElementById('noGames').style.display = 'block';
+            document.getElementById('libraryGrid').innerHTML = '';
+            document.getElementById('libraryList').innerHTML = '';
+        }
+    }
+
+    function updateStats() {
+        const totalGames = filteredLibrary.length;
+        const totalPlaytime = filteredLibrary.reduce((sum, game) => sum + game.hoursPlayed, 0);
+        const installedCount = filteredLibrary.filter(g => g.isInstalled).length;
+
+        document.getElementById('totalGames').textContent = totalGames;
+        document.getElementById('totalPlaytime').textContent = totalPlaytime.toFixed(1) + 'h';
+        document.getElementById('installedCount').textContent = installedCount;
+    }
+
+    function renderLibrary(games = filteredLibrary) {
+        updateStats();
+
+        if (games.length === 0) {
+            document.getElementById('noGames').style.display = 'block';
+            document.getElementById('libraryGrid').innerHTML = '';
+            document.getElementById('libraryList').innerHTML = '';
+            return;
+        }
+
+        document.getElementById('noGames').style.display = 'none';
+
+        if (currentView === 'grid') {
+            renderGridView(games);
+        } else {
+            renderListView(games);
+        }
+    }
+
+    function renderGridView(games) {
+        const grid = document.getElementById('libraryGrid');
+        grid.innerHTML = games.map(game => `
+            <div class="library-card" onclick="openGame('${game.game_id}')">
+                <div class="library-card-content">
+                    <h4 class="library-card-title">${game.gameTitle}</h4>
+                    <p class="library-card-status">${game.developer || 'Unknown Developer'}</p>
+                    <p class="playtime-badge">⏱️ ${game.hoursPlayed}h</p>
+                    ${game.isInstalled ?
+                        '<div class="installed-badge">✓ Installed</div>' :
+                        '<div class="not-installed-badge">📥 Not Installed</div>'
+                    }
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function renderListView(games) {
+        const list = document.getElementById('libraryList');
+        list.innerHTML = games.map(game => `
+            <div class="library-list-item" onclick="openGame('${game.game_id}')">
+                <div class="list-game-info">
+                    <h3 class="list-game-title">${game.gameTitle}</h3>
+                    <div class="list-game-stats">
+                        <span>📊 ${game.hoursPlayed}h played</span>
+                        <span>💾 ${game.spaceRequiredGB}GB</span>
+                        <span>📅 Purchased ${new Date(game.datePurchased).toLocaleDateString()}</span>
+                    </div>
+                </div>
+                <div class="list-game-actions">
+                    <button class="btn-action-danger" onclick="refundGame(event, '${game._id}')">Refund</button>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    function switchView(view) {
+        currentView = view;
+
+        document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+        event.target.classList.add('active');
+
+        const grid = document.getElementById('libraryGrid');
+        const list = document.getElementById('libraryList');
+
+        if (view === 'grid') {
+            grid.style.display = 'grid';
+            list.style.display = 'none';
+        } else {
+            grid.style.display = 'none';
+            list.style.display = 'flex';
+        }
+
+        renderLibrary(filteredLibrary);
+    }
+
+    function filterLibrary() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const statusFilter = document.getElementById('statusFilter').value;
+
+        filteredLibrary = allLibraryGames.filter(game => {
+            const matchesSearch = game.gameTitle.toLowerCase().includes(searchTerm) ||
+                                (game.developer && game.developer.toLowerCase().includes(searchTerm));
+
+            let matchesStatus = true;
+            if (statusFilter === 'installed') {
+                matchesStatus = game.isInstalled;
+            } else if (statusFilter === 'not-installed') {
+                matchesStatus = !game.isInstalled;
+            }
+
+            return matchesSearch && matchesStatus;
+        });
+
+        renderLibrary(filteredLibrary);
+    }
+
+    function sortLibrary() {
+        const sortBy = document.getElementById('sortBy').value;
+        const sorted = [...filteredLibrary];
+
+        switch(sortBy) {
+            case 'alphabetical':
+                sorted.sort((a, b) => a.gameTitle.localeCompare(b.gameTitle));
+                break;
+            case 'playtime':
+                sorted.sort((a, b) => b.hoursPlayed - a.hoursPlayed);
+                break;
+            case 'purchased':
+                sorted.sort((a, b) => new Date(b.datePurchased) - new Date(a.datePurchased));
+                break;
+            case 'recent':
+            default:
+                // Keep original order
+                break;
+        }
+
+        filteredLibrary = sorted;
+        renderLibrary(filteredLibrary);
+    }
+
+    function openGame(gameId) {
+        window.location.href = `/game/${gameId}`;
+    }
+
+    function refundGame(event, ownedGameId) {
+        event.stopPropagation();
+        if (confirm('Are you sure you want to refund this game?')) {
+            fetch('/api/refund', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ owned_game_id: ownedGameId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Refund processed successfully!');
+                    // Update wallet display and refresh library
+                    updateWalletDisplay(data.newBalance);
+                    fetchLibrary();
+                } else {
+                    alert('Refund failed: ' + data.error);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred during refund');
+            });
+        }
+    }
+
+    // Funds Management Functions
+    function openAddFundsModal() {
+        document.getElementById('addFundsModal').classList.add('active');
+        document.getElementById('fundsAmount').focus();
+    }
+
+    function closeAddFundsModal() {
+        document.getElementById('addFundsModal').classList.remove('active');
+        document.getElementById('fundsAmount').value = '';
+    }
+
+    function processAddFunds() {
+        const amount = parseFloat(document.getElementById('fundsAmount').value);
+
+        if (!amount || amount < 10) {
+            alert('Please enter an amount of at least ₱10');
+            return;
+        }
+
+        // Send add funds request to backend
+        fetch('/api/add-funds', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                amount: amount
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Funds added successfully!');
+                closeAddFundsModal();
+                updateWalletDisplay(data.new_balance);
+            } else {
+                alert('Failed to add funds: ' + (data.error || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while adding funds');
+        });
+    }
+
+    function updateWalletDisplay(balance) {
+        document.getElementById('walletBalance').textContent = '₱' + parseFloat(balance).toFixed(2);
+    }
+
+    function loadWalletBalance() {
+        fetch('/api/user/wallet')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateWalletDisplay(data.balance);
+                }
+            })
+            .catch(error => console.error('Error fetching wallet balance:', error));
+    }
+
+    // Initial render - fetch from API
+    fetchLibrary();
+    loadWalletBalance();
+</script>
+{% endblock %}

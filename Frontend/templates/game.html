@@ -1,0 +1,637 @@
+{% extends "base.html" %}
+
+{% block title %}Game Details - GameStore{% endblock %}
+
+{% block content %}
+<style>
+    .game-header {
+        background: linear-gradient(135deg, rgba(31, 111, 235, 0.3) 0%, rgba(88, 166, 255, 0.1) 100%),
+                    linear-gradient(to bottom, var(--secondary-dark) 0%, var(--primary-dark) 100%);
+        border-bottom: 2px solid var(--border-color);
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .game-header-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+        align-items: start;
+    }
+
+    .game-header-info h1 {
+        color: var(--accent-secondary);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .game-developer {
+        font-size: 1.1rem;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .game-meta {
+        display: flex;
+        gap: var(--spacing-xl);
+        margin-bottom: var(--spacing-lg);
+        flex-wrap: wrap;
+    }
+
+    .meta-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .meta-label {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-xs);
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .meta-value {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--accent-secondary);
+    }
+
+    .rating-display {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+    }
+
+    .stars-large {
+        font-size: 1.5rem;
+        color: var(--accent-warning);
+    }
+
+    .rating-text {
+        color: var(--text-secondary);
+    }
+
+    .price-display {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+    }
+
+    .price-main {
+        font-size: 2rem;
+        font-weight: 700;
+    }
+
+    .price-free {
+        color: var(--accent-success);
+    }
+
+    .price-regular {
+        color: var(--accent-danger);
+    }
+
+    .price-original {
+        text-decoration: line-through;
+        color: var(--text-secondary);
+        font-size: 1rem;
+    }
+
+    .discount-tag {
+        background-color: var(--accent-danger);
+        color: white;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--radius-md);
+        font-weight: 700;
+    }
+
+    .early-access-badge,
+    .free-badge {
+        background-color: rgba(210, 153, 34, 0.2);
+        color: var(--accent-warning);
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--radius-md);
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .free-badge {
+        background-color: rgba(63, 185, 80, 0.2);
+        color: var(--accent-success);
+    }
+
+    .action-buttons {
+        display: flex;
+        gap: var(--spacing-md);
+        margin: var(--spacing-lg) 0;
+        flex-wrap: wrap;
+    }
+
+    .btn-large {
+        padding: var(--spacing-md) var(--spacing-xl);
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: var(--radius-md);
+        border: none;
+        cursor: pointer;
+        transition: all var(--transition-normal);
+    }
+
+    .btn-buy {
+        background-color: var(--accent-primary);
+        color: white;
+        width: 100%;
+        border-radius: var(--radius-md);
+    }
+
+    .btn-buy:hover {
+        background-color: var(--accent-secondary);
+    }
+
+    .btn-buy.owned {
+        background-color: var(--accent-success);
+    }
+
+    .btn-buy.owned:hover {
+        background-color: var(--accent-success);
+        cursor: not-allowed;
+    }
+
+    .game-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-lg);
+    }
+
+    .tabs {
+        display: flex;
+        gap: var(--spacing-md);
+        border-bottom: 2px solid var(--border-color);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .tab-button {
+        padding: var(--spacing-md) var(--spacing-lg);
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        transition: all var(--transition-fast);
+        margin-bottom: -2px;
+    }
+
+    .tab-button.active {
+        color: var(--accent-secondary);
+        border-bottom-color: var(--accent-secondary);
+    }
+
+    .tab-button:hover {
+        color: var(--text-primary);
+    }
+
+    .tab-content {
+        display: none;
+    }
+
+    .tab-content.active {
+        display: block;
+        animation: fadeIn 300ms ease-in;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Description Tab */
+    .description-section {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-xl);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .description-section h3 {
+        color: var(--accent-secondary);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .description-section p {
+        line-height: 1.8;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .categories-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .category-badge {
+        background-color: rgba(31, 111, 235, 0.2);
+        color: var(--accent-secondary);
+        padding: var(--spacing-sm) var(--spacing-md);
+        border-radius: var(--radius-md);
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    /* Reviews Section */
+    .reviews-container {
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .review-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .review-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .reviewer-info {
+        flex: 1;
+    }
+
+    .reviewer-name {
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .review-meta {
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+    }
+
+    .review-verdict {
+        display: flex;
+        gap: var(--spacing-sm);
+        align-items: center;
+    }
+
+    .verdict-badge {
+        background-color: rgba(63, 185, 80, 0.2);
+        color: var(--accent-success);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: 3px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .review-content {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .review-rating {
+        color: var(--accent-warning);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .no-reviews {
+        text-align: center;
+        padding: var(--spacing-2xl);
+        color: var(--text-secondary);
+    }
+
+    @media (max-width: 768px) {
+        .game-header-content {
+            grid-template-columns: 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .game-cover {
+            max-width: 300px;
+        }
+
+        .action-buttons {
+            flex-direction: column;
+        }
+
+        .btn-large {
+            width: 100%;
+        }
+
+        .tabs {
+            gap: 0;
+            overflow-x: auto;
+        }
+
+        .tab-button {
+            padding: var(--spacing-md);
+            white-space: nowrap;
+        }
+    }
+</style>
+
+<div class="game-header">
+    <div class="game-header-content">
+        <!-- Game Info -->
+        <div class="game-header-info">
+            <h1 id="gameTitle">Game Title</h1>
+            <p class="game-developer" id="gameDeveloper">Developer Name</p>
+
+            <!-- Meta Information -->
+            <div class="game-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Rating</span>
+                    <div class="rating-display">
+                        <span class="stars-large" id="gameRating">★90</span>
+                        <span class="rating-text" id="gameVerdict">Very Positive</span>
+                    </div>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Release Date</span>
+                    <span class="meta-value" id="releaseDate">2024-01-01</span>
+                </div>
+            </div>
+
+            <!-- Badges -->
+            <div id="badges" style="display: flex; gap: var(--spacing-sm); margin-bottom: var(--spacing-lg); flex-wrap: wrap;">
+                <!-- Badges will be inserted here -->
+            </div>
+
+            <!-- Price -->
+            <div class="price-display" id="priceDisplay">
+                <!-- Price will be inserted here -->
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="btn-large btn-buy" id="buyBtn" onclick="buyGame()">Buy</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Game Content Tabs -->
+<div class="game-content">
+    <div class="tabs">
+        <button class="tab-button active" onclick="showTab('description')">About</button>
+        <button class="tab-button" onclick="showTab('reviews')">Reviews</button>
+        <button class="tab-button" onclick="showTab('details')">Details</button>
+    </div>
+
+    <!-- Description Tab -->
+    <div id="description" class="tab-content active">
+        <div class="description-section">
+            <h3>About This Game</h3>
+            <p id="gameDescription">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+
+            <h3 style="margin-top: var(--spacing-xl);">Categories</h3>
+            <div class="categories-section" id="categoriesList">
+                <!-- Categories will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Reviews Tab -->
+    <div id="reviews" class="tab-content">
+        <div class="reviews-container" id="reviewsList">
+            <div class="no-reviews">
+                <p>No reviews available yet</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Details Tab -->
+    <div id="details" class="tab-content">
+        <div class="description-section">
+            <h3>System Requirements</h3>
+            <p>Minimum requirements will be displayed here</p>
+
+            <h3 style="margin-top: var(--spacing-xl);">Languages</h3>
+            <p>Supported languages: English, Spanish, French, German, Japanese, Chinese</p>
+
+            <h3 style="margin-top: var(--spacing-xl);">Additional Information</h3>
+            <p id="gameSize">Size: Calculating...</p>
+            <p>Developer Support: Available on the game's official website</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    let gameData = null;
+    let gameId = null;
+    let isGameOwned = false;
+
+    // Extract game ID from URL
+    function getGameIdFromUrl() {
+        const pathParts = window.location.pathname.split('/');
+        return pathParts[pathParts.length - 1];
+    }
+
+    // Check if user owns this game
+    async function checkIfGameOwned() {
+        try {
+            const response = await fetch('/api/user/library');
+            if (response.ok) {
+                const data = await response.json();
+                const ownedGames = data.games || [];
+                isGameOwned = ownedGames.some(game => game.gameTitle === (gameData?.gameTitle || ''));
+                updateBuyButtonState();
+            }
+        } catch (error) {
+            console.error('Error checking owned games:', error);
+        }
+    }
+
+    // Fetch game data from API
+    async function fetchGameData() {
+        try {
+            gameId = getGameIdFromUrl();
+            const response = await fetch(`/api/games/${gameId}`);
+            if (!response.ok) {
+                throw new Error('Game not found');
+            }
+            gameData = await response.json();
+
+            // Fetch reviews for this game
+            const reviewsResponse = await fetch(`/api/games/${gameId}/reviews`);
+            if (reviewsResponse.ok) {
+                const reviewsData = await reviewsResponse.json();
+                gameData.reviews = reviewsData.reviews || [];
+            } else {
+                gameData.reviews = [];
+            }
+
+            initGame();
+        } catch (error) {
+            console.error('Error fetching game:', error);
+            document.querySelector('.game-header').innerHTML = `
+                <div style="padding: 40px; text-align: center; color: var(--text-secondary);">
+                    <h2>Game not found</h2>
+                    <p>The game you're looking for doesn't exist.</p>
+                    <a href="/store" style="color: var(--accent-secondary); text-decoration: underline;">Back to store</a>
+                </div>
+            `;
+        }
+    }
+
+    function updateBuyButtonState() {
+        const buyBtn = document.getElementById('buyBtn');
+        if (!buyBtn) return;
+
+        if (isGameOwned) {
+            buyBtn.textContent = '✓ Owned';
+            buyBtn.disabled = true;
+            buyBtn.className = 'btn-large btn-buy owned';
+            buyBtn.onclick = null;
+        } else {
+            buyBtn.textContent = 'Buy';
+            buyBtn.disabled = false;
+            buyBtn.className = 'btn-large btn-buy';
+            buyBtn.onclick = buyGame;
+        }
+    }
+
+    function initGame() {
+        if (!gameData) return;
+        document.getElementById('gameTitle').textContent = gameData.gameTitle;
+        document.getElementById('gameDeveloper').textContent = gameData.developer;
+        document.getElementById('gameRating').textContent = `★${gameData.averageRating}`;
+        document.getElementById('gameVerdict').textContent = gameData.reviewVerdict;
+        document.getElementById('releaseDate').textContent = new Date(gameData.releaseDate).toLocaleDateString();
+        document.getElementById('gameDescription').textContent = gameData.description;
+        document.getElementById('gameSize').textContent = `Size: ${gameData.spaceRequiredGB || 'N/A'}GB`;
+
+        // Check if user owns this game
+        checkIfGameOwned();
+
+        // Render badges
+        const badges = document.getElementById('badges');
+        badges.innerHTML = '';
+        if (gameData.isDiscounted) {
+            badges.innerHTML += `<div class="discount-tag">-${gameData.currentDiscountPercent}%</div>`;
+        }
+        if (gameData.isFree) {
+            badges.innerHTML += `<div class="free-badge">Free to Play</div>`;
+        }
+        if (gameData.isEarlyAccess) {
+            badges.innerHTML += `<div class="early-access-badge">Early Access</div>`;
+        }
+
+        // Render price
+        const priceDisplay = document.getElementById('priceDisplay');
+        if (gameData.isFree) {
+            priceDisplay.innerHTML = `<span class="price-main price-free">Free</span>`;
+        } else {
+            let html = `<span class="price-main price-regular">₱${gameData.currentPricePeso.toFixed(2)}</span>`;
+            if (gameData.isDiscounted) {
+                html += `<span class="price-original">₱${gameData.originalPricePeso.toFixed(2)}</span>`;
+            }
+            priceDisplay.innerHTML = html;
+        }
+
+        // Render categories
+        const categoriesList = document.getElementById('categoriesList');
+        categoriesList.innerHTML = (gameData.categories || [])
+            .map(cat => `<div class="category-badge">${cat}</div>`)
+            .join('');
+
+        // Render reviews
+        renderReviews();
+    }
+
+    function renderReviews() {
+        const reviewsList = document.getElementById('reviewsList');
+        if (gameData.reviews.length === 0) {
+            reviewsList.innerHTML = '<div class="no-reviews"><p>No reviews available yet</p></div>';
+            return;
+        }
+
+        reviewsList.innerHTML = gameData.reviews
+            .map(review => `
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="reviewer-info">
+                            <div class="reviewer-name">${review.author}</div>
+                            <div class="review-meta">
+                                ${review.playtime}h playtime • ${new Date(review.date).toLocaleDateString()}
+                            </div>
+                        </div>
+                        <div class="review-verdict">
+                            ${review.recommended ? '<div class="verdict-badge">✓ Recommended</div>' : '<div class="verdict-badge">✗ Not Recommended</div>'}
+                        </div>
+                    </div>
+                    <div class="review-rating">★${review.rating}/10</div>
+                    <div class="review-content">${review.content}</div>
+                </div>
+            `)
+            .join('');
+    }
+
+    function showTab(tabName) {
+        // Hide all tabs
+        document.querySelectorAll('.tab-content').forEach(tab => {
+            tab.classList.remove('active');
+        });
+
+        // Remove active from all buttons
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Show selected tab
+        document.getElementById(tabName).classList.add('active');
+
+        // Mark button as active
+        event.target.classList.add('active');
+    }
+
+    function buyGame() {
+        if (!gameData) return;
+
+        fetch('/api/purchase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ game_id: gameId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert(`Added "${gameData.gameTitle}" to your library!`);
+                // Redirect to library
+                window.location.href = '/library';
+            } else {
+                alert('Purchase failed: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred during purchase');
+        });
+    }
+
+    // Initialize on page load - fetch from API
+    fetchGameData();
+</script>
+{% endblock %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎮 Game Store</h1>
+            <p>Discover amazing games</p>
+        </header>
+
+        <!-- Filters Section -->
+        <section class="filters">
+            <div class="filter-group">
+                <input
+                    type="text"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="🔍 Search games by title or developer..."
+                >
+            </div>
+
+            <div class="filter-controls">
+                <div class="filter-item">
+                    <label for="minRating">Min Rating:</label>
+                    <input
+                        type="range"
+                        id="minRating"
+                        min="0"
+                        max="100"
+                        value="0"
+                        class="slider"
+                    >
+                    <span id="ratingValue">0</span> / 100
+                </div>
+
+                <div class="filter-item">
+                    <label for="maxPrice">Max Price:</label>
+                    <input
+                        type="range"
+                        id="maxPrice"
+                        min="0"
+                        max="5000"
+                        value="5000"
+                        class="slider"
+                    >
+                    ₱<span id="priceValue">5000</span>
+                </div>
+
+                <button id="resetBtn" class="reset-btn">Reset Filters</button>
+            </div>
+        </section>
+
+        <!-- Games Grid -->
+        <section class="games-section">
+            <div id="loadingSpinner" class="loading">Loading games...</div>
+            <div id="gamesList" class="games-grid"></div>
+            <div id="noResults" class="no-results" style="display: none;">
+                No games found matching your criteria
+            </div>
+        </section>
+    </div>
+
+    <!-- Game Detail Modal -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="gameDetails"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

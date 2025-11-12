@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %}Login - GameStore{% endblock %}
+
+{% block content %}
+<style>
+    .auth-container {
+        max-width: 450px;
+        margin: 6rem auto;
+        padding: 0 var(--spacing-lg);
+    }
+
+    .auth-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-xl);
+        padding: var(--spacing-2xl);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .auth-card h1 {
+        text-align: center;
+        color: var(--accent-secondary);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .login-subtitle {
+        text-align: center;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-2xl);
+        font-size: 0.95rem;
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .form-label {
+        display: block;
+        font-weight: 600;
+        margin-bottom: var(--spacing-sm);
+        color: var(--text-primary);
+    }
+
+    .form-input {
+        width: 100%;
+        padding: var(--spacing-md);
+        background-color: var(--tertiary-dark);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        font-size: 1rem;
+        transition: all var(--transition-fast);
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: var(--accent-secondary);
+        box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.1);
+    }
+
+    .form-input::placeholder {
+        color: var(--text-secondary);
+    }
+
+    .remember-forgot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--spacing-lg);
+        font-size: 0.9rem;
+    }
+
+    .remember-forgot a {
+        color: var(--accent-secondary);
+    }
+
+    .remember-forgot label {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        cursor: pointer;
+    }
+
+    .remember-forgot input[type="checkbox"] {
+        cursor: pointer;
+        accent-color: var(--accent-primary);
+    }
+
+    .login-btn {
+        width: 100%;
+        padding: var(--spacing-md);
+        background-color: var(--accent-primary);
+        color: white;
+        border: none;
+        border-radius: var(--radius-md);
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .login-btn:hover {
+        background-color: var(--accent-secondary);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-md);
+    }
+
+    .login-btn:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        transform: none;
+    }
+
+    .signup-link {
+        text-align: center;
+        margin-top: var(--spacing-lg);
+        padding-top: var(--spacing-lg);
+        border-top: 1px solid var(--border-color);
+        color: var(--text-secondary);
+    }
+
+    .signup-link a {
+        color: var(--accent-secondary);
+        font-weight: 600;
+    }
+
+    .error-message {
+        background-color: rgba(218, 54, 51, 0.1);
+        border: 1px solid var(--accent-danger);
+        color: var(--accent-danger);
+        padding: var(--spacing-md);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-lg);
+        font-size: 0.9rem;
+    }
+
+    .demo-info {
+        background-color: rgba(31, 111, 235, 0.1);
+        border: 1px solid var(--accent-secondary);
+        padding: var(--spacing-md);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-lg);
+        font-size: 0.9rem;
+    }
+
+    .demo-info strong {
+        color: var(--accent-secondary);
+    }
+</style>
+
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>Welcome Back</h1>
+        <p class="login-subtitle">Sign in to your GameStore account</p>
+
+        {% if error %}
+            <div class="error-message">{{ error }}</div>
+        {% endif %}
+
+        <div class="demo-info">
+            <strong>Demo Account:</strong><br>
+            Username: Akumpo<br>
+            Password: (use your test credentials)
+        </div>
+
+        <form method="POST" action="{{ url_for('login') }}">
+            <!-- Username -->
+            <div class="form-group">
+                <label class="form-label" for="username">Username</label>
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    class="form-input"
+                    placeholder="Enter your username"
+                    required
+                    autofocus
+                >
+            </div>
+
+            <!-- Password -->
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="form-input"
+                    placeholder="Enter your password"
+                    required
+                >
+            </div>
+
+            <!-- Remember & Forgot -->
+            <div class="remember-forgot">
+                <label>
+                    <input type="checkbox" name="remember" id="remember">
+                    Remember me
+                </label>
+                <a href="#">Forgot password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="login-btn">Sign In</button>
+
+            <!-- Register Link -->
+            <div class="signup-link">
+                Don't have an account? <a href="{{ url_for('register') }}">Create one</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

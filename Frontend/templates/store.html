@@ -1,0 +1,843 @@
+{% extends "base.html" %}
+
+{% block title %}Store - GameStore{% endblock %}
+
+{% block content %}
+<style>
+    .store-hero {
+        background: linear-gradient(135deg, var(--secondary-dark) 0%, var(--tertiary-dark) 100%);
+        border-bottom: 2px solid var(--border-color);
+        padding: var(--spacing-2xl) var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .store-hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .store-hero h1 {
+        color: var(--accent-secondary);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .store-controls {
+        display: flex;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-2xl);
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .search-box {
+        flex: 1;
+        min-width: 250px;
+        position: relative;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: var(--spacing-md) var(--spacing-lg);
+        background-color: var(--tertiary-dark);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+    }
+
+    .filter-group {
+        display: flex;
+        gap: var(--spacing-md);
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .filter-group select {
+        padding: var(--spacing-sm) var(--spacing-md);
+        background-color: var(--tertiary-dark);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        cursor: pointer;
+    }
+
+    .sort-by {
+        display: flex;
+        gap: var(--spacing-sm);
+        align-items: center;
+    }
+
+    .games-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .game-card {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        transition: all var(--transition-normal);
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    .game-card:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--accent-secondary);
+    }
+
+    .game-card-badges {
+        padding: var(--spacing-md);
+        display: flex;
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .badge {
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        border-radius: var(--radius-sm);
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .badge-discount {
+        background-color: var(--accent-danger);
+        color: white;
+    }
+
+    .badge-free {
+        background-color: var(--accent-success);
+        color: white;
+    }
+
+    .badge-early-access {
+        background-color: var(--accent-warning);
+        color: white;
+    }
+
+    .game-card-content {
+        padding: var(--spacing-md);
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .game-card-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: var(--spacing-xs);
+        color: var(--text-primary);
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .game-card-developer {
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .game-card-categories {
+        display: flex;
+        gap: var(--spacing-xs);
+        flex-wrap: wrap;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .category-tag {
+        background-color: rgba(31, 111, 235, 0.2);
+        color: var(--accent-secondary);
+        padding: 2px 6px;
+        border-radius: 3px;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    .game-card-rating {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-sm);
+        font-size: 0.85rem;
+    }
+
+    .stars {
+        color: var(--accent-warning);
+    }
+
+    .rating-text {
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+    }
+
+    .game-card-footer {
+        padding-top: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: auto;
+    }
+
+    .price-section {
+        display: flex;
+        align-items: baseline;
+        gap: var(--spacing-sm);
+    }
+
+    .game-price {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+
+    .price-free {
+        color: var(--accent-success);
+    }
+
+    .price-regular {
+        color: var(--accent-danger);
+    }
+
+    .price-original {
+        text-decoration: line-through;
+        color: var(--text-secondary);
+        font-size: 0.85rem;
+        font-weight: normal;
+    }
+
+    .game-actions {
+        display: flex;
+        gap: var(--spacing-sm);
+        width: 100%;
+        padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
+    }
+
+    .btn-buy {
+        flex: 1;
+        padding: var(--spacing-md) var(--spacing-md);
+        background-color: var(--accent-primary);
+        color: white;
+        border: none;
+        border-radius: var(--radius-md);
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color var(--transition-normal);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .btn-buy:hover {
+        background-color: var(--accent-secondary);
+    }
+
+    .btn-buy.owned {
+        background-color: var(--accent-success);
+        cursor: not-allowed;
+    }
+
+    .btn-buy.owned:hover {
+        background-color: var(--accent-success);
+    }
+
+    .btn-buy:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
+    }
+
+    .store-wallet-display {
+        display: flex;
+        gap: var(--spacing-md);
+        align-items: center;
+        justify-content: space-between;
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-lg);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .store-wallet-info {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+
+    .store-wallet-label {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+    }
+
+    .store-wallet-amount {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-success);
+    }
+
+    .no-results {
+        text-align: center;
+        padding: var(--spacing-2xl);
+        color: var(--text-secondary);
+    }
+
+    .no-results-icon {
+        font-size: 4rem;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .pagination {
+        display: flex;
+        gap: var(--spacing-sm);
+        justify-content: center;
+        margin: var(--spacing-2xl) 0;
+    }
+
+    .pagination-btn {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border-color);
+        background-color: var(--card-bg);
+        color: var(--text-primary);
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .pagination-btn:hover,
+    .pagination-btn.active {
+        background-color: var(--accent-primary);
+        border-color: var(--accent-primary);
+        color: white;
+    }
+
+    /* Modal Styles */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .modal-content {
+        background-color: var(--card-bg);
+        padding: var(--spacing-2xl);
+        border-radius: var(--radius-lg);
+        border: 1px solid var(--border-color);
+        max-width: 400px;
+        width: 90%;
+        box-shadow: var(--shadow-xl);
+    }
+
+    .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: var(--spacing-lg);
+        border-bottom: 1px solid var(--border-color);
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .modal-header h2 {
+        margin: 0;
+        color: var(--accent-secondary);
+    }
+
+    .modal-close {
+        background: none;
+        border: none;
+        color: var(--text-secondary);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color var(--transition-fast);
+        padding: 0;
+        width: 30px;
+        height: 30px;
+    }
+
+    .modal-close:hover {
+        color: var(--text-primary);
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .form-label {
+        display: block;
+        margin-bottom: var(--spacing-sm);
+        color: var(--text-primary);
+        font-weight: 600;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: var(--spacing-md);
+        background-color: var(--tertiary-dark);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        font-size: 1rem;
+    }
+
+    .form-input:focus {
+        outline: none;
+        border-color: var(--accent-secondary);
+        box-shadow: 0 0 0 3px rgba(31, 111, 235, 0.1);
+    }
+
+    .btn {
+        padding: var(--spacing-md) var(--spacing-lg);
+        border: none;
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        font-weight: 600;
+        transition: all var(--transition-fast);
+        font-size: 0.95rem;
+    }
+
+    .btn-primary {
+        background-color: var(--accent-primary);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: var(--accent-secondary);
+    }
+
+    .btn-secondary {
+        background-color: var(--tertiary-dark);
+        color: var(--text-primary);
+        border: 1px solid var(--border-color);
+    }
+
+    .btn-secondary:hover {
+        background-color: var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+        .games-grid {
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        }
+
+        .store-controls {
+            flex-direction: column;
+        }
+
+        .search-box {
+            min-width: 100%;
+        }
+
+        .filter-group {
+            width: 100%;
+        }
+    }
+</style>
+
+<div class="store-hero">
+    <div class="store-hero-content container">
+        <h1>Game Store</h1>
+        <p>Discover and purchase amazing games for your collection</p>
+    </div>
+</div>
+
+<div class="container">
+    <!-- Wallet Display -->
+    <div class="store-wallet-display">
+        <div class="store-wallet-info">
+            <span class="store-wallet-label">Account Balance</span>
+            <span class="store-wallet-amount" id="storeWalletBalance">₱0.00</span>
+        </div>
+        <button class="btn-add-funds" onclick="openAddFundsModal()" style="background-color: var(--accent-primary); color: white; border: none; padding: var(--spacing-md) var(--spacing-xl); border-radius: var(--radius-md); cursor: pointer; font-weight: 600; transition: background-color var(--transition-fast);">Add Funds</button>
+    </div>
+
+    <!-- Store Controls -->
+    <div class="store-controls">
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search games by title or developer..."
+                onkeyup="filterGames()"
+            >
+        </div>
+
+        <div class="filter-group">
+            <select id="categoryFilter" onchange="filterGames()">
+                <option value="">All Categories</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Strategy">Strategy</option>
+                <option value="RPG">RPG</option>
+                <option value="Sports">Sports</option>
+                <option value="Puzzle">Puzzle</option>
+            </select>
+
+            <select id="priceFilter" onchange="filterGames()">
+                <option value="">All Prices</option>
+                <option value="free">Free</option>
+                <option value="under-500">Under ₱500</option>
+                <option value="500-1000">₱500 - ₱1000</option>
+                <option value="over-1000">Over ₱1000</option>
+            </select>
+
+            <select id="sortBy" onchange="sortGames()">
+                <option value="popular">Most Popular</option>
+                <option value="rating">Highest Rated</option>
+                <option value="newest">Newest</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+            </select>
+        </div>
+    </div>
+
+    <!-- Games Grid -->
+    <div class="games-grid" id="gamesGrid">
+        <!-- Games will be loaded here -->
+        <div class="no-results" style="grid-column: 1 / -1;">
+            <div class="no-results-icon">🎮</div>
+            <h3>Loading games...</h3>
+            <p>Please wait while we fetch the available games</p>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+        <!-- Pagination will be generated here -->
+    </div>
+
+    <!-- Add Funds Modal -->
+    <div id="addFundsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Funds to Account</h2>
+                <button class="modal-close" onclick="closeAddFundsModal()">×</button>
+            </div>
+            <div style="padding: var(--spacing-lg) 0;">
+                <div class="form-group">
+                    <label class="form-label">Amount (₱)</label>
+                    <input
+                        type="number"
+                        id="storeAddFundsAmount"
+                        class="form-input"
+                        placeholder="Enter amount..."
+                        min="10"
+                        step="10"
+                    >
+                </div>
+                <div style="display: flex; gap: var(--spacing-md); margin-top: var(--spacing-lg);">
+                    <button class="btn btn-primary" style="flex: 1;" onclick="processAddFundsStore()">Add Funds</button>
+                    <button class="btn btn-secondary" style="flex: 1;" onclick="closeAddFundsModal()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let allGames = [];
+    let currentPage = 1;
+    const itemsPerPage = 12;
+    let filteredGames = [];
+    let ownedGameTitles = [];
+
+    // Fetch user's owned games
+    async function fetchOwnedGames() {
+        try {
+            const response = await fetch('/api/user/library');
+            if (response.ok) {
+                const data = await response.json();
+                ownedGameTitles = (data.games || []).map(game => game.gameTitle);
+            }
+        } catch (error) {
+            console.error('Error fetching owned games:', error);
+        }
+    }
+
+    // Fetch games from the backend API
+    async function fetchGames() {
+        try {
+            const response = await fetch('/api/games');
+            if (!response.ok) {
+                throw new Error('Failed to fetch games');
+            }
+            const data = await response.json();
+            allGames = data.games || [];
+            filteredGames = [...allGames];
+            renderGames();
+        } catch (error) {
+            console.error('Error fetching games:', error);
+            document.getElementById('gamesGrid').innerHTML = `
+                <div class="no-results" style="grid-column: 1 / -1;">
+                    <div class="no-results-icon">❌</div>
+                    <h3>Error loading games</h3>
+                    <p>Failed to load games from the server</p>
+                </div>
+            `;
+        }
+    }
+
+    function renderGames(games = filteredGames, page = 1) {
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const paginatedGames = games.slice(start, end);
+
+        const grid = document.getElementById('gamesGrid');
+
+        if (paginatedGames.length === 0) {
+            grid.innerHTML = `
+                <div class="no-results" style="grid-column: 1 / -1;">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No games found</h3>
+                    <p>Try adjusting your filters or search terms</p>
+                </div>
+            `;
+            document.getElementById('pagination').innerHTML = '';
+            return;
+        }
+
+        grid.innerHTML = paginatedGames.map(game => `
+            <div class="game-card" onclick="goToGame('${game._id}')">
+                <div class="game-card-badges">
+                    ${game.isDiscounted ? `<div class="badge badge-discount">-${game.currentDiscountPercent}%</div>` : ''}
+                    ${game.isFree ? `<div class="badge badge-free">Free</div>` : ''}
+                    ${game.isEarlyAccess ? `<div class="badge badge-early-access">Early Access</div>` : ''}
+                </div>
+                <div class="game-card-content">
+                    <h4 class="game-card-title">${game.gameTitle}</h4>
+                    <p class="game-card-developer">${game.developer}</p>
+                    <div class="game-card-categories">
+                        ${(game.categories || []).slice(0, 2).map(cat => `<span class="category-tag">${cat}</span>`).join('')}
+                    </div>
+                    <div class="game-card-rating">
+                        <span class="stars">★${game.averageRating}</span>
+                        <span class="rating-text">${game.reviewVerdict}</span>
+                    </div>
+                </div>
+                <div class="game-card-footer">
+                    <div class="price-section">
+                        <span class="game-price ${game.isFree ? 'price-free' : 'price-regular'}">
+                            ${game.isFree ? 'Free' : `₱${game.currentPricePeso.toFixed(2)}`}
+                        </span>
+                        ${game.isDiscounted ? `<span class="price-original">₱${game.originalPricePeso.toFixed(2)}</span>` : ''}
+                    </div>
+                </div>
+                <div class="game-actions">
+                    ${ownedGameTitles.includes(game.gameTitle) ?
+                        `<button class="btn-buy owned" disabled>✓ Owned</button>` :
+                        `<button class="btn-buy" onclick="buyGame(event, '${game._id}')">Buy</button>`
+                    }
+                </div>
+            </div>
+        `).join('');
+
+        renderPagination(games.length);
+    }
+
+    function renderPagination(totalItems) {
+        const totalPages = Math.ceil(totalItems / itemsPerPage);
+        const pagination = document.getElementById('pagination');
+
+        if (totalPages <= 1) {
+            pagination.innerHTML = '';
+            return;
+        }
+
+        let html = '';
+        for (let i = 1; i <= totalPages; i++) {
+            html += `
+                <button class="pagination-btn ${i === currentPage ? 'active' : ''}" onclick="goToPage(${i})">
+                    ${i}
+                </button>
+            `;
+        }
+        pagination.innerHTML = html;
+    }
+
+    function filterGames() {
+        const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+        const category = document.getElementById('categoryFilter').value;
+        const priceRange = document.getElementById('priceFilter').value;
+
+        filteredGames = allGames.filter(game => {
+            const matchesSearch = game.gameTitle.toLowerCase().includes(searchTerm) ||
+                                game.developer.toLowerCase().includes(searchTerm);
+
+            const matchesCategory = !category || (game.categories || []).includes(category);
+
+            let matchesPrice = true;
+            if (priceRange === 'free') {
+                matchesPrice = game.isFree;
+            } else if (priceRange === 'under-500') {
+                matchesPrice = !game.isFree && game.currentPricePeso < 500;
+            } else if (priceRange === '500-1000') {
+                matchesPrice = !game.isFree && game.currentPricePeso >= 500 && game.currentPricePeso <= 1000;
+            } else if (priceRange === 'over-1000') {
+                matchesPrice = !game.isFree && game.currentPricePeso > 1000;
+            }
+
+            return matchesSearch && matchesCategory && matchesPrice;
+        });
+
+        currentPage = 1;
+        renderGames(filteredGames, 1);
+    }
+
+    function sortGames() {
+        const sortBy = document.getElementById('sortBy').value;
+
+        const sorted = [...filteredGames];
+
+        switch(sortBy) {
+            case 'rating':
+                sorted.sort((a, b) => b.averageRating - a.averageRating);
+                break;
+            case 'newest':
+                sorted.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
+                break;
+            case 'price-asc':
+                sorted.sort((a, b) => a.currentPricePeso - b.currentPricePeso);
+                break;
+            case 'price-desc':
+                sorted.sort((a, b) => b.currentPricePeso - a.currentPricePeso);
+                break;
+            case 'popular':
+            default:
+                // Keep original order
+                break;
+        }
+
+        currentPage = 1;
+        renderGames(sorted, 1);
+    }
+
+    function goToPage(page) {
+        currentPage = page;
+        renderGames(filteredGames, page);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function goToGame(gameId) {
+        window.location.href = `/game/${gameId}`;
+    }
+
+    function buyGame(event, gameId) {
+        event.stopPropagation();
+        // Send purchase request to backend
+        fetch('/api/purchase', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ game_id: gameId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Purchase successful!');
+                // Update wallet display and refresh owned games list
+                updateStoreWalletDisplay(data.newBalance);
+                fetchOwnedGames().then(() => {
+                    fetchGames();
+                });
+            } else {
+                alert('Purchase failed: ' + data.error);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function updateStoreWalletDisplay(balance) {
+        const walletElement = document.getElementById('storeWalletBalance');
+        if (walletElement) {
+            walletElement.textContent = '₱' + parseFloat(balance).toFixed(2);
+        }
+    }
+
+    function loadStoreWalletBalance() {
+        fetch('/api/user/wallet')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateStoreWalletDisplay(data.balance);
+                }
+            })
+            .catch(error => console.error('Error loading wallet balance:', error));
+    }
+
+    // Funds Management Functions
+    function openAddFundsModal() {
+        document.getElementById('addFundsModal').classList.add('active');
+        document.getElementById('storeAddFundsAmount').focus();
+    }
+
+    function closeAddFundsModal() {
+        document.getElementById('addFundsModal').classList.remove('active');
+        document.getElementById('storeAddFundsAmount').value = '';
+    }
+
+    function processAddFundsStore() {
+        const amount = parseFloat(document.getElementById('storeAddFundsAmount').value);
+
+        if (!amount || amount < 10) {
+            alert('Please enter an amount of at least ₱10');
+            return;
+        }
+
+        // Send add funds request to backend
+        fetch('/api/add-funds', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                amount: amount
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Funds added successfully!');
+                closeAddFundsModal();
+                updateStoreWalletDisplay(data.new_balance);
+            } else {
+                alert('Failed to add funds: ' + (data.error || 'Unknown error'));
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred while adding funds');
+        });
+    }
+
+    // Initial render - fetch from API
+    fetchOwnedGames().then(() => {
+        fetchGames();
+        loadStoreWalletBalance();
+    });
+</script>
+{% endblock %}
