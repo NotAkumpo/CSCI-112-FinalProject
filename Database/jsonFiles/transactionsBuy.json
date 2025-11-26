@@ -201,7 +201,7 @@
         "customerUsername" : "rayjoh",
         "customer_id" : "*****",
         "transactionDate" : datetime(2022, 1, 5),
-        "isRefund" : false,
+        "isRefund" : true,
         "subtotal" : 540.6875814837028,
         "lineItems" : [
             {
