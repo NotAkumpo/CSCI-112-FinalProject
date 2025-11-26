@@ -250,7 +250,7 @@ if __name__ == "__main__":
                 "game_id" : "String (indexed)",
                 "purchasePricePeso" : 0,
                 "isDiscounted" : True
-            },
+            }
         ]
     }
     # SAMPLE DOCUMENT
