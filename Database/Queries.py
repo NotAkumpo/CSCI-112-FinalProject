@@ -13,7 +13,7 @@ def closeConnection(conn):
 
 if __name__ == "__main__":
 
-    conn = establishConnection() # Never comment this line as this establishes the connection to MongoDB
+    conn = establishConnection('localhost') # Never comment this line as this establishes the connection to MongoDB
 
     db = conn['finalProjectTest'] 
 

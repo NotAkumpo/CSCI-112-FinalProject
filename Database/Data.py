@@ -3,6 +3,8 @@ from datetime import datetime
 from bson.int64 import Int64
 from bson.decimal128 import Decimal128
 from decimal import Decimal
+import json
+
 
 def establishConnection(host='localhost'):
     conn = pymongo.MongoClient(host, 27017)
@@ -19,17 +21,16 @@ if __name__ == "__main__":
     """
 
     # Establish MongoDB connection. Make sure to replace localhost accordingly
-    conn = establishConnection('localhost') # Never comment this line as this establishes the connection to MongoDB
-
+    conn = establishConnection('172.31.17.124') # Never comment this line as this establishes the connection to MongoDB
+    
     db = conn['finalProjectTest'] 
-
     # __________________________________________________________________________________________
     # ---------------------------------customerAccounts Schema----------------------------------
     # The collection containing the accounts of the customers/users of the digital game store.
     # SCHEMA
-    customerAccounts = {
+    customerAccounts= {
         "username" : "String",
-        "password" : "StringEncrypted", 
+        "password" : "StringEncrypted", #note: this is just their username encoded.
         "customerFirstName" : "String",
         "customerLastName" : "String",
         "country" : "String",
@@ -39,40 +40,21 @@ if __name__ == "__main__":
         "phoneNumber" : "String",
         "walletBalancePeso" : 0,
     }
-    # SAMPLE DOCUMENT
-    customerAccountsSample = {
-        "username" : "Akumpo",
-        "password" : "4676424d5f805a7579abd1236287be2abf24f39b8a622ef587edd7d91b8e2952",
-        "customerFirstName" : "Abdiel",
-        "customerLastName" : "Evangelista",
-        "country" : "Philippines",
-        "emailAddress" : "abdiel.evangelista@student.ateneo.edu",
-        "age" : 23,
-        "birthDate" : datetime(2002,12,31),
-        "phoneNumber" : "+63 905 271 9062",
-        "walletBalancePeso" : 2480.79,
-    }
-    # FIELD DESCRIPTIONS
-    customerAccountsFieldDescriptions = {
-        "username" : "The customer account's unique username",
-        "password" : "The customer account's password (this will be encrypted)",
-        "customerFirstName" : "The customer's first name",
-        "customerLastName" : "The customer's last name",
-        "country" : "The country that the customer account is bound to",
-        "emailAddress" : "The email address that the customer account is bound to",
-        "age" : "The customer's age",
-        "birthDate" : "The customer's birth date",
-        "phoneNumber" : "The phone number that the customer account is bound to",
-        "walletBalancePeso" : "The customer account's money balance that can be used to purchase games",
-    }
-    # __________________________________________________________________________________________
+    # DATA
     
+    with open('Database/jsonFiles/customerAccounts.json') as f:
+      customerAccounts_file_data = json.load(f)
+    db['customerAccounts'].insert_many(customerAccounts_file_data)
 
-    db['customerAccounts'].insert_one(customerAccounts)
-    db['customerAccounts'].insert_one(customerAccountsSample)
-    db['customerAccounts'].insert_one(customerAccountsFieldDescriptions)
+    # for removing ObjectID() in _id
+    pipeline = [
+      {'$addFields': {'_id': {'$toString': '$_id'}}},
+        {
+          '$out': 'customerAccounts'
+        }
+    ]
 
-    
+    db['customerAccounts'].aggregate(pipeline)
     # __________________________________________________________________________________________
     # ---------------------------------storeGameInfo Schema-------------------------------------
     # The collection containing the data of the games as displayed on the store itself for browsing or purchase.
@@ -94,49 +76,20 @@ if __name__ == "__main__":
         ],
         "description" : "String",
     }
-    # SAMPLE DOCUMENT
-    storeGameInfoSample = {
-        "gameTitle" : "Clover Pit",
-        "reviewVerdict" : "Very Positive",
-        "averageRating" : 90,
-        "originalPricePeso" : 335,
-        "currentPricePeso" : 301.5,
-        "isDiscounted" : True,
-        "isFree" : False,
-        "isEarlyAccess" : False,
-        "currentDiscountPercent" : 20,
-        "releaseDate" : datetime(2025,9,27),
-        "developer" : "Panik Arcade",
-        "categories" : [
-            "Gambling",
-            "Roguelite",
-            "Strategy",
-            "3D"
-        ],
-        "description" : "A rogue-lite slot machine nightmare. Gamble for your life in a never-ending debt simulator!",
-    }
-    # FIELD DESCRIPTIONS
-    storeGameInfoFieldDescriptions = {
-        "gameTitle" : "The title of the game",
-        "reviewVerdict" : "The overall verdict based on all the reviews of the game",
-        "averageRating" : "The overall rating based on all the reviews of the game",
-        "originalPricePeso" : "The game's original price in peso",
-        "currentPricePeso" : "The game's current price in peso",
-        "isDiscounted" : "True if the game is currently discounted",
-        "isFree" : "True if the game is free",
-        "isEarlyAccess" : "True if the game is in early access",
-        "currentDiscountPercent" : "The percentage of the game's current discount",
-        "releaseDate" : "The game's release date",
-        "developer" : "The game's developer",
-        "categories" : "A list of the game's categories",
-        "description" : "The game's description",
-    }
-    # __________________________________________________________________________________________
-    
+    # DATA
+    with open('Database/jsonFiles/gameInfo.json') as f:
+      gameInfo_file_data = json.load(f)
+    db['storeGameInfo'].insert_many(gameInfo_file_data)
 
-    db['storeGameInfo'].insert_one(storeGameInfo)
-    db['storeGameInfo'].insert_one(storeGameInfoSample)
-    db['storeGameInfo'].insert_one(storeGameInfoFieldDescriptions)
+    # for removing ObjectID() in _id
+    pipeline = [
+      {'$addFields': {'_id': {'$toString': '$_id'}}},
+        {
+          '$out': 'storeGameInfo'
+        }
+    ]
+
+    db['storeGameInfo'].aggregate(pipeline)
 
 
     # __________________________________________________________________________________________
@@ -250,7 +203,7 @@ if __name__ == "__main__":
                 "game_id" : "String (indexed)",
                 "purchasePricePeso" : 0,
                 "isDiscounted" : True
-            }
+            },
         ]
     }
     # SAMPLE DOCUMENT
@@ -334,4 +287,5 @@ if __name__ == "__main__":
     db['transactions'].insert_one(transactionsRefundFieldDescriptions)
 
 
-    closeConnection(conn)
+
+closeConnection(conn)
