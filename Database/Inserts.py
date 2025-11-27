@@ -1042,7 +1042,1603 @@ if __name__ == "__main__":
         }
     ]
 
+    ownedGameInfo = [
+        {
+            "ownerUsername": "statuc",
+            "owner_id": "*****",
+            "gameTitle": "Battlefield™ 2042",
+            "game_id": "*****",
+            "licenseID": "bf2042-key-83749201",
+            "hoursPlayed": 12.5,
+            "spaceRequiredGB": 92.4,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 11, 19)
+        },
+        {
+            "ownerUsername": "statuc",
+            "owner_id": "*****",
+            "gameTitle": "THE FINALS",
+            "game_id": "*****",
+            "licenseID": "finals-key-gen-102938",
+            "hoursPlayed": 14.2,
+            "spaceRequiredGB": 18.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 11, 19)
+        },
+        {
+            "ownerUsername": "statuc",
+            "owner_id": "*****",
+            "gameTitle": "Fallout 4",
+            "game_id": "*****",
+            "licenseID": "fo4-key-gen-47582910",
+            "hoursPlayed": 5.5,
+            "spaceRequiredGB": 35.8,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 11, 19)
+        },
+        {
+            "ownerUsername": "statuc",
+            "owner_id": "*****",
+            "gameTitle": "Hades",
+            "game_id": "*****",
+            "licenseID": "hades-key-gen-55667788",
+            "hoursPlayed": 32.8,
+            "spaceRequiredGB": 15.6,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 10, 12)
+        },
+        {
+            "ownerUsername": "statuc",
+            "owner_id": "*****",
+            "gameTitle": "Undertale",
+            "game_id": "*****",
+            "licenseID": "und-key-gen-99887766",
+            "hoursPlayed": 8.9,
+            "spaceRequiredGB": 0.3,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 10, 12)
+        },
+        {
+            "ownerUsername": "sabcol",
+            "owner_id": "*****",
+            "gameTitle": "THE FINALS",
+            "game_id": "*****",
+            "licenseID": "finals-lic-29384756",
+            "hoursPlayed": 64.2,
+            "spaceRequiredGB": 18.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 12, 10)
+        },
+        {
+            "ownerUsername": "sabcol",
+            "owner_id": "*****",
+            "gameTitle": "Battlefield™ 2042",
+            "game_id": "*****",
+            "licenseID": "bf2042-key-gen-44332211",
+            "hoursPlayed": 1.2,
+            "spaceRequiredGB": 92.4,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 12, 10)
+        },
+        {
+            "ownerUsername": "sabcol",
+            "owner_id": "*****",
+            "gameTitle": "Hearts of Iron IV",
+            "game_id": "*****",
+            "licenseID": "hoi4-key-gen-55661122",
+            "hoursPlayed": 150.5,
+            "spaceRequiredGB": 4.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 12, 10)
+        },
+        {
+            "ownerUsername": "ronwri",
+            "owner_id": "*****",
+            "gameTitle": "Fallout 4",
+            "game_id": "*****",
+            "licenseID": "fo4-goty-10293847",
+            "hoursPlayed": 240.5,
+            "spaceRequiredGB": 35.8,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 10, 6)
+        },
+        {
+            "ownerUsername": "ronwri",
+            "owner_id": "*****",
+            "gameTitle": "NARAKA: BLADEPOINT",
+            "game_id": "*****",
+            "licenseID": "narak-key-gen-77889900",
+            "hoursPlayed": 45.6,
+            "spaceRequiredGB": 32.1,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 10, 6)
+        },
+        {
+            "ownerUsername": "ronwri",
+            "owner_id": "*****",
+            "gameTitle": "Path of Exile",
+            "game_id": "*****",
+            "licenseID": "poe-key-gen-11223344",
+            "hoursPlayed": 210.4,
+            "spaceRequiredGB": 40.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 10, 6)
+        },
+        {
+            "ownerUsername": "bobpar",
+            "owner_id": "*****",
+            "gameTitle": "Hearts of Iron IV",
+            "game_id": "*****",
+            "licenseID": "hoi4-gen-56473829",
+            "hoursPlayed": 512.9,
+            "spaceRequiredGB": 4.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 6, 6)
+        },
+        {
+            "ownerUsername": "bobpar",
+            "owner_id": "*****",
+            "gameTitle": "Marvel Rivals",
+            "game_id": "*****",
+            "licenseID": "mr-key-gen-66554433",
+            "hoursPlayed": 5.5,
+            "spaceRequiredGB": 25.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 6, 6)
+        },
+        {
+            "ownerUsername": "bobpar",
+            "owner_id": "*****",
+            "gameTitle": "NARAKA: BLADEPOINT",
+            "game_id": "*****",
+            "licenseID": "narak-key-gen-99887711",
+            "hoursPlayed": 22.1,
+            "spaceRequiredGB": 32.1,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 6, 6)
+        },
+        {
+            "ownerUsername": "hanols",
+            "owner_id": "*****",
+            "gameTitle": "Marvel Rivals",
+            "game_id": "*****",
+            "licenseID": "mr-beta-99887766",
+            "hoursPlayed": 8.1,
+            "spaceRequiredGB": 25.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 1, 15)
+        },
+        {
+            "ownerUsername": "hanols",
+            "owner_id": "*****",
+            "gameTitle": "Sid Meier’s Civilization® VI",
+            "game_id": "*****",
+            "licenseID": "civ6-key-gen-22334455",
+            "hoursPlayed": 88.2,
+            "spaceRequiredGB": 12.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 1, 15)
+        },
+        {
+            "ownerUsername": "hanols",
+            "owner_id": "*****",
+            "gameTitle": "7 Days to Die",
+            "game_id": "*****",
+            "licenseID": "7dtd-key-gen-11223344",
+            "hoursPlayed": 14.3,
+            "spaceRequiredGB": 15.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 1, 15)
+        },
+        {
+            "ownerUsername": "liswea",
+            "owner_id": "*****",
+            "gameTitle": "Project Zomboid",
+            "game_id": "*****",
+            "licenseID": "pz-surv-11223344",
+            "hoursPlayed": 150.3,
+            "spaceRequiredGB": 3.2,
+            "isInstalled": True,
+            "datePurchased": datetime(2022, 3, 14)
+        },
+        {
+            "ownerUsername": "liswea",
+            "owner_id": "*****",
+            "gameTitle": "No Mans Sky",
+            "game_id": "*****",
+            "licenseID": "nms-key-gen-88776655",
+            "hoursPlayed": 66.7,
+            "spaceRequiredGB": 14.3,
+            "isInstalled": True,
+            "datePurchased": datetime(2022, 3, 14)
+        },
+        {
+            "ownerUsername": "kailam",
+            "owner_id": "*****",
+            "gameTitle": "Deep Rock Galactic",
+            "game_id": "*****",
+            "licenseID": "drg-rock-55667788",
+            "hoursPlayed": 13.0,
+            "spaceRequiredGB": 3.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2021, 9, 9)
+        },
+        {
+            "ownerUsername": "kailam",
+            "owner_id": "*****",
+            "gameTitle": "Sekiro™: Shadows Die Twice - GOTY Edition",
+            "game_id": "*****",
+            "licenseID": "sek-key-gen-99001122",
+            "hoursPlayed": 2.5,
+            "spaceRequiredGB": 25.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2021, 9, 9)
+        },
+        {
+            "ownerUsername": "eridaw",
+            "owner_id": "*****",
+            "gameTitle": "Path of Exile",
+            "game_id": "*****",
+            "licenseID": "poe-free-00000001",
+            "hoursPlayed": 4.2,
+            "spaceRequiredGB": 40.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2020, 8, 20)
+        },
+        {
+            "ownerUsername": "eridaw",
+            "owner_id": "*****",
+            "gameTitle": "Deep Rock Galactic",
+            "game_id": "*****",
+            "licenseID": "drg-key-gen-44556677",
+            "hoursPlayed": 105.0,
+            "spaceRequiredGB": 3.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2020, 8, 20)
+        },
+        {
+            "ownerUsername": "samgon",
+            "owner_id": "*****",
+            "gameTitle": "Hogwarts Legacy",
+            "game_id": "*****",
+            "licenseID": "hl-wiza-44332211",
+            "hoursPlayed": 25.6,
+            "spaceRequiredGB": 85.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2023, 2, 10)
+        },
+        {
+            "ownerUsername": "samgon",
+            "owner_id": "*****",
+            "gameTitle": "Sid Meier’s Civilization® VI",
+            "game_id": "*****",
+            "licenseID": "civ6-key-gen-11223399",
+            "hoursPlayed": 30.0,
+            "spaceRequiredGB": 12.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2023, 2, 10)
+        },
+        {
+            "ownerUsername": "nannel",
+            "owner_id": "*****",
+            "gameTitle": "People Playground",
+            "game_id": "*****",
+            "licenseID": "pp-doll-77665544",
+            "hoursPlayed": 2.1,
+            "spaceRequiredGB": 0.8,
+            "isInstalled": True,
+            "datePurchased": datetime(2021, 5, 5)
+        },
+        {
+            "ownerUsername": "nannel",
+            "owner_id": "*****",
+            "gameTitle": "New World: Aeternum",
+            "game_id": "*****",
+            "licenseID": "nw-key-gen-88552233",
+            "hoursPlayed": 0.4,
+            "spaceRequiredGB": 50.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2021, 5, 5)
+        },
+        {
+            "ownerUsername": "chrmit",
+            "owner_id": "*****",
+            "gameTitle": "Sid Meier’s Civilization® VI",
+            "game_id": "*****",
+            "licenseID": "civ6-gold-22114433",
+            "hoursPlayed": 340.9,
+            "spaceRequiredGB": 12.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2017, 12, 25)
+        },
+        {
+            "ownerUsername": "chrmit",
+            "owner_id": "*****",
+            "gameTitle": "Hogwarts Legacy",
+            "game_id": "*****",
+            "licenseID": "hl-key-gen-55443322",
+            "hoursPlayed": 42.0,
+            "spaceRequiredGB": 85.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2017, 12, 25)
+        },
+        {
+            "ownerUsername": "clapen",
+            "owner_id": "*****",
+            "gameTitle": "7 Days to Die",
+            "game_id": "*****",
+            "licenseID": "7dtd-key-99882233",
+            "hoursPlayed": 99.5,
+            "spaceRequiredGB": 15.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2019, 10, 11)
+        },
+        {
+            "ownerUsername": "clapen",
+            "owner_id": "*****",
+            "gameTitle": "NARAKA: BLADEPOINT",
+            "game_id": "*****",
+            "licenseID": "narak-key-gen-11559900",
+            "hoursPlayed": 18.9,
+            "spaceRequiredGB": 32.1,
+            "isInstalled": True,
+            "datePurchased": datetime(2019, 10, 11)
+        },
+        {
+            "ownerUsername": "alerom",
+            "owner_id": "*****",
+            "gameTitle": "VRChat",
+            "game_id": "*****",
+            "licenseID": "vrc-meta-55443322",
+            "hoursPlayed": 1200.2,
+            "spaceRequiredGB": 20.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2020, 3, 20)
+        },
+        {
+            "ownerUsername": "alerom",
+            "owner_id": "*****",
+            "gameTitle": "Sid Meier’s Civilization® VI",
+            "game_id": "*****",
+            "licenseID": "civ6-key-gen-77441122",
+            "hoursPlayed": 400.1,
+            "spaceRequiredGB": 12.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2020, 3, 20)
+        },
+        {
+            "ownerUsername": "paubre",
+            "owner_id": "*****",
+            "gameTitle": "No Mans Sky",
+            "game_id": "*****",
+            "licenseID": "nms-space-11992288",
+            "hoursPlayed": 18.4,
+            "spaceRequiredGB": 14.3,
+            "isInstalled": True,
+            "datePurchased": datetime(2016, 8, 12)
+        },
+        {
+            "ownerUsername": "karhow",
+            "owner_id": "*****",
+            "gameTitle": "Sekiro™: Shadows Die Twice - GOTY Edition",
+            "game_id": "*****",
+            "licenseID": "sek-goty-77338822",
+            "hoursPlayed": 75.0,
+            "spaceRequiredGB": 25.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2020, 11, 28)
+        },
+        {
+            "ownerUsername": "jesfle",
+            "owner_id": "*****",
+            "gameTitle": "Undertale",
+            "game_id": "*****",
+            "licenseID": "und-soul-44556677",
+            "hoursPlayed": 10.5,
+            "spaceRequiredGB": 0.3,
+            "isInstalled": True,
+            "datePurchased": datetime(2016, 1, 15)
+        },
+        {
+            "ownerUsername": "walwal",
+            "owner_id": "*****",
+            "gameTitle": "Hades",
+            "game_id": "*****",
+            "licenseID": "hades-hell-99118822",
+            "hoursPlayed": 5.2,
+            "spaceRequiredGB": 15.6,
+            "isInstalled": True,
+            "datePurchased": datetime(2021, 6, 20)
+        },
+        {
+            "ownerUsername": "paujoh",
+            "owner_id": "*****",
+            "gameTitle": "Vampire Survivors",
+            "game_id": "*****",
+            "licenseID": "vs-garlic-33221100",
+            "hoursPlayed": 80.1,
+            "spaceRequiredGB": 0.6,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 10, 17)
+        },
+        {
+            "ownerUsername": "whimur",
+            "owner_id": "*****",
+            "gameTitle": "DARK SOULS™ III",
+            "game_id": "*****",
+            "licenseID": "ds3-fire-55005500",
+            "hoursPlayed": 110.8,
+            "spaceRequiredGB": 25.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2017, 4, 15)
+        },
+        {
+            "ownerUsername": "rachic",
+            "owner_id": "*****",
+            "gameTitle": "New World: Aeternum",
+            "game_id": "*****",
+            "licenseID": "nw-mmo-22883377",
+            "hoursPlayed": 45.0,
+            "spaceRequiredGB": 50.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2021, 9, 28)
+        },
+        {
+            "ownerUsername": "alerya",
+            "owner_id": "*****",
+            "gameTitle": "Battlefield™ 2042",
+            "game_id": "*****",
+            "licenseID": "bf2042-key-11229988",
+            "hoursPlayed": 20.2,
+            "spaceRequiredGB": 92.4,
+            "isInstalled": True,
+            "datePurchased": datetime(2022, 12, 25)
+        },
+        {
+            "ownerUsername": "pauest",
+            "owner_id": "*****",
+            "gameTitle": "THE FINALS",
+            "game_id": "*****",
+            "licenseID": "finals-lic-77441122",
+            "hoursPlayed": 150.9,
+            "spaceRequiredGB": 18.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2024, 1, 1)
+        },
+        {
+            "ownerUsername": "alawil",
+            "owner_id": "*****",
+            "gameTitle": "Fallout 4",
+            "game_id": "*****",
+            "licenseID": "fo4-key-33669922",
+            "hoursPlayed": 60.5,
+            "spaceRequiredGB": 35.8,
+            "isInstalled": True,
+            "datePurchased": datetime(2019, 2, 14)
+        },
+        {
+            "ownerUsername": "benmor",
+            "owner_id": "*****",
+            "gameTitle": "Marvel Rivals",
+            "game_id": "*****",
+            "licenseID": "mr-key-44885522",
+            "hoursPlayed": 6.0,
+            "spaceRequiredGB": 25.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 2, 20)
+        },
+        {
+            "ownerUsername": "petgil",
+            "owner_id": "*****",
+            "gameTitle": "Project Zomboid",
+            "game_id": "*****",
+            "licenseID": "pz-key-11002299",
+            "hoursPlayed": 300.2,
+            "spaceRequiredGB": 3.2,
+            "isInstalled": True,
+            "datePurchased": datetime(2021, 8, 15)
+        },
+        {
+            "ownerUsername": "donspe",
+            "owner_id": "*****",
+            "gameTitle": "Deep Rock Galactic",
+            "game_id": "*****",
+            "licenseID": "drg-key-55884411",
+            "hoursPlayed": 3.5,
+            "spaceRequiredGB": 3.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2023, 5, 5)
+        },
+        {
+            "ownerUsername": "aleell",
+            "owner_id": "*****",
+            "gameTitle": "Path of Exile",
+            "game_id": "*****",
+            "licenseID": "poe-key-77441155",
+            "hoursPlayed": 15.0,
+            "spaceRequiredGB": 40.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 10, 14)
+        },
+        {
+            "ownerUsername": "darjon",
+            "owner_id": "*****",
+            "gameTitle": "Path of Exile",
+            "game_id": "*****",
+            "licenseID": "poe-key-gen-55663322",
+            "hoursPlayed": 12.8,
+            "spaceRequiredGB": 40.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 4, 22)
+        },
+        {
+            "ownerUsername": "ricgoo",
+            "owner_id": "*****",
+            "gameTitle": "Hearts of Iron IV",
+            "game_id": "*****",
+            "licenseID": "hoi4-key-11447788",
+            "hoursPlayed": 40.5,
+            "spaceRequiredGB": 4.5,
+            "isInstalled": True,
+            "datePurchased": datetime(2020, 5, 9)
+        },
+        {
+            "ownerUsername": "connor",
+            "owner_id": "*****",
+            "gameTitle": "Hogwarts Legacy",
+            "game_id": "*****",
+            "licenseID": "hl-key-22558899",
+            "hoursPlayed": 60.0,
+            "spaceRequiredGB": 85.0,
+            "isInstalled": True,
+            "datePurchased": datetime(2025, 3, 15)
+        }
+    ]
+
+    gameReviews = [
+        {
+            "gameTitle": "Battlefield™ 2042",
+            "game_id": "*****",
+            "authorUsername": "statuc",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "DICE really dropped the ball here. The maps feel empty and the specialist system ruins the class identity Battlefield is known for. Even after updates, it just doesn't feel right.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 11, 25),
+            "userPlaytimeHours": 12.5
+        },
+        {
+            "gameTitle": "THE FINALS",
+            "game_id": "*****",
+            "authorUsername": "sabcol",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Chaotic fun! The destruction mechanics are insane. Playing with friends in Thailand servers is smooth, but solo queue can be frustrating.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 12, 20),
+            "userPlaytimeHours": 64.2
+        },
+        {
+            "gameTitle": "Fallout 4",
+            "game_id": "*****",
+            "authorUsername": "ronwri",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "The base game is okay, but the modding community carries this title. Settlement building is addictive once you get the hang of it.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 10, 20),
+            "userPlaytimeHours": 240.5
+        },
+        {
+            "gameTitle": "Hearts of Iron IV",
+            "game_id": "*****",
+            "authorUsername": "bobpar",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Steep learning curve but incredibly rewarding. I've spent 500 hours just trying to conquer Asia as a minor nation.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 7, 10),
+            "userPlaytimeHours": 512.9
+        },
+        {
+            "gameTitle": "Marvel Rivals",
+            "game_id": "*****",
+            "authorUsername": "hanols",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "NetEase needs to fix the balancing. Some heroes are instant wins while others are useless. Not worth the grind in its current state.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 11, 5),
+            "userPlaytimeHours": 8.1
+        },
+        {
+            "gameTitle": "Project Zomboid",
+            "game_id": "*****",
+            "authorUsername": "liswea",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "This is how you died. Best zombie survival simulator ever made. I died because I ate burnt toast. 10/10.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 6, 22),
+            "userPlaytimeHours": 150.3
+        },
+        {
+            "gameTitle": "Deep Rock Galactic",
+            "game_id": "*****",
+            "authorUsername": "kailam",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "The grind is too repetitive for me. I wanted to like the dwarves, but the mission variety just isn't there after the first 10 hours.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 2, 18),
+            "userPlaytimeHours": 13.0
+        },
+        {
+            "gameTitle": "NARAKA: BLADEPOINT",
+            "game_id": "*****",
+            "authorUsername": "ronwri",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Combat is fluid and fast. The grappling hook mechanics add so much verticality to the fights. Ping is great in Singapore region.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 11, 7),
+            "userPlaytimeHours": 45.6
+        },
+        {
+            "gameTitle": "Path of Exile",
+            "game_id": "*****",
+            "authorUsername": "eridaw",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Too complex for a casual player. The skill tree gives me a headache and the trading system is archaic.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 10, 12),
+            "userPlaytimeHours": 4.2
+        },
+        {
+            "gameTitle": "Hogwarts Legacy",
+            "game_id": "*****",
+            "authorUsername": "samgon",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Beautiful world, boring gameplay. Once you explore the castle, the open world feels generic and repetitive.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 4, 30),
+            "userPlaytimeHours": 25.6
+        },
+        {
+            "gameTitle": "People Playground",
+            "game_id": "*****",
+            "authorUsername": "nannel",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "It's just a gore sandbox. Gets boring after you've blown up a ragdoll for the 50th time.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 1, 5),
+            "userPlaytimeHours": 2.1
+        },
+        {
+            "gameTitle": "Sid Meier’s Civilization® VI",
+            "game_id": "*****",
+            "authorUsername": "chrmit",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Just one more turn... and suddenly it's 4 AM. playing as the Philippines mod adds nice flavor.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 11, 20),
+            "userPlaytimeHours": 340.9
+        },
+        {
+            "gameTitle": "7 Days to Die",
+            "game_id": "*****",
+            "authorUsername": "clapen",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Janky as hell but incredibly fun with friends. Building a base to survive the horde night is a rush.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 8, 8),
+            "userPlaytimeHours": 99.5
+        },
+        {
+            "gameTitle": "VRChat",
+            "game_id": "*****",
+            "authorUsername": "alerom",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "I don't even have a VR headset and I've met some of my best friends here. The community creates amazing worlds.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 9, 15),
+            "userPlaytimeHours": 1200.2
+        },
+        {
+            "gameTitle": "No Mans Sky",
+            "game_id": "*****",
+            "authorUsername": "paubre",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Wide as an ocean, deep as a puddle. Procedural generation makes everything look the same after a while.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 5, 22),
+            "userPlaytimeHours": 18.4
+        },
+        {
+            "gameTitle": "Sekiro™: Shadows Die Twice - GOTY Edition",
+            "game_id": "*****",
+            "authorUsername": "karhow",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Hesitation is defeat. Best combat system FromSoftware has ever made. Hard, but fair.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 12, 1),
+            "userPlaytimeHours": 75.0
+        },
+        {
+            "gameTitle": "Undertale",
+            "game_id": "*****",
+            "authorUsername": "jesfle",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "A masterpiece. The music, the story, the characters—everything is perfect. Stay filled with determination!",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 2, 14),
+            "userPlaytimeHours": 10.5
+        },
+        {
+            "gameTitle": "Hades",
+            "game_id": "*****",
+            "authorUsername": "walwal",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Too much button mashing for my taste. My hands hurt after an hour of playing this.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 7, 19),
+            "userPlaytimeHours": 5.2
+        },
+        {
+            "gameTitle": "Vampire Survivors",
+            "game_id": "*****",
+            "authorUsername": "paujoh",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Cheap price for hundreds of hours of dopamine hits. It runs great on my laptop too.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 10, 31),
+            "userPlaytimeHours": 80.1
+        },
+        {
+            "gameTitle": "DARK SOULS™ III",
+            "game_id": "*****",
+            "authorUsername": "whimur",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "The atmosphere in this game is unmatched. The boss fights are epic, though the swamp area is annoying.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 6, 5),
+            "userPlaytimeHours": 110.8
+        },
+        {
+            "gameTitle": "New World: Aeternum",
+            "game_id": "*****",
+            "authorUsername": "rachic",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Amazon needs to fix the economy. Crafting feels useless and the quests are just fetch quests.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 3, 28),
+            "userPlaytimeHours": 45.0
+        },
+        {
+            "gameTitle": "Battlefield™ 2042",
+            "game_id": "*****",
+            "authorUsername": "alerya",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Still buggy in 2025? Come on DICE. The hit registration is awful on Asian servers.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 9, 2),
+            "userPlaytimeHours": 20.2
+        },
+        {
+            "gameTitle": "THE FINALS",
+            "game_id": "*****",
+            "authorUsername": "pauest",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Best FPS out right now. The movement speed and strategy required make every match feel unique.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 11, 15),
+            "userPlaytimeHours": 150.9
+        },
+        {
+            "gameTitle": "Fallout 4",
+            "game_id": "*****",
+            "authorUsername": "alawil",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Story is weak compared to New Vegas. The dialogue options are too limited—basically just Yes, No, Sarcastic, Later.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 4, 12),
+            "userPlaytimeHours": 60.5
+        },
+        {
+            "gameTitle": "Marvel Rivals",
+            "game_id": "*****",
+            "authorUsername": "benmor",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Feels like an Overwatch clone but with worse optimization. FPS drops constantly.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 10, 25),
+            "userPlaytimeHours": 6.0
+        },
+        {
+            "gameTitle": "Project Zomboid",
+            "game_id": "*****",
+            "authorUsername": "petgil",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Hardcore survival at its finest. Playing multiplayer with friends in Malaysia is a blast.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 1, 20),
+            "userPlaytimeHours": 300.2
+        },
+        {
+            "gameTitle": "Deep Rock Galactic",
+            "game_id": "*****",
+            "authorUsername": "donspe",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "The community is toxic. Got kicked from a lobby just for being a new player.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 8, 30),
+            "userPlaytimeHours": 3.5
+        },
+        {
+            "gameTitle": "NARAKA: BLADEPOINT",
+            "game_id": "*****",
+            "authorUsername": "clapen",
+            "author_id": "*****",
+            "isRecommended": True,
+            "reviewDescription": "Finally a Battle Royale that focuses on melee! The character customization is top tier.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 7, 22),
+            "userPlaytimeHours": 18.9
+        },
+        {
+            "gameTitle": "Path of Exile",
+            "game_id": "*****",
+            "authorUsername": "aleell",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Desync issues make this unplayable on my connection in Myanmar. Rubberbanding everywhere.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 11, 5),
+            "userPlaytimeHours": 15.0
+        },
+        {
+            "gameTitle": "Hades",
+            "game_id": "*****",
+            "authorUsername": "statuc",
+            "author_id": "*****",
+            "isRecommended": False,
+            "reviewDescription": "Rogue-likes aren't for me. I hate losing progress every time I die. The art is nice though.",
+            "reviewVisibility": "Public",
+            "datePosted": datetime(2025, 11, 18),
+            "userPlaytimeHours": 32.8
+        }
+    ]
+
+    transactionsBuy = [
+        {
+            "customerUsername" : "statuc",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025,11,19),
+            "isRefund" : False,
+            "subtotal" : 3926.39,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Battlefield™ 2042",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "THE FINALS",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 551.16,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Fallout 4",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 3375.23,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "sabcol",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025,12,10),
+            "isRefund" : False,
+            "subtotal" : 551.16,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Battlefield™ 2042",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "THE FINALS",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 551.16,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Hearts of Iron IV",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "ronwri",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025,10,6),
+            "isRefund" : False,
+            "subtotal" : 16899.86,
+            "lineItems" : [
+                {
+                    "gameTitle" : "NARAKA: BLADEPOINT",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 540.69,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Fallout 4",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 3375.23,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Path of Exile",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 12983.94,
+                    "isDiscounted" : False
+                }
+            ]
+        },
+        {
+            "customerUsername" : "bobpar",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025,6, 6),
+            "isRefund" : False,
+            "subtotal" : 790.42,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Marvel Rivals",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 249.74,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Hearts of Iron IV",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "NARAKA: BLADEPOINT",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 540.69,
+                    "isDiscounted" : False
+                }
+            ]
+        },
+        {
+            "customerUsername" : "hanols",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025,1, 15),
+            "isRefund" : False,
+            "subtotal" : 249.74,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Marvel Rivals",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 249.74,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Sid Meier’s Civilization® VI",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "7 Days to Die",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : False
+                }
+            ]
+        },
+        {
+            "customerUsername" : "liswea",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2022,3, 14),
+            "isRefund" : False,
+            "subtotal" : 11097.89,
+            "lineItems" : [
+                {
+                    "gameTitle" : "No Mans Sky",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 11097.89,
+                    "isDiscounted" : False
+                },
+                {
+                    "gameTitle" : "Project Zomboid",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "kailam",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2021,9,9),
+            "isRefund" : False,
+            "subtotal" : 1309.10,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Deep Rock Galactic",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 1309.10,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "statuc",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025,10,12),
+            "isRefund" : False,
+            "subtotal" : 9400.80,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Hades",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 9400.80,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Undertale",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "rayjoh",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2022, 1, 5),
+            "isRefund" : True,
+            "subtotal" : 540.69,
+            "lineItems" : [
+                {
+                    "gameTitle" : "NARAKA: BLADEPOINT",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 540.69,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "eridaw",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2020,8,20),
+            "isRefund" : False,
+            "subtotal" : 14293.04,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Path of Exile",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 12983.9405435028,
+                    "isDiscounted" : False
+                },
+                {
+                    "gameTitle" : "Deep Rock Galactic",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 1309.099902308662,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "samgon",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2023,2,10),
+            "isRefund" : False,
+            "subtotal" : 2822.77,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Hogwarts Legacy",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 2822.769455639357,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Sid Meier’s Civilization® VI",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "nannel",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2021,5,5),
+            "isRefund" : False,
+            "subtotal" : 0,
+            "lineItems" : [
+                {
+                    "gameTitle" : "People Playground",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "New World: Aeternum",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "chrmit",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2017,12,25),
+            "isRefund" : False,
+            "subtotal" : 2822.77,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Hogwarts Legacy",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 2822.769455639357,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Sid Meier’s Civilization® VI",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "clapen",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2019,10,11),
+            "isRefund" : False,
+            "subtotal" : 540.69,
+            "lineItems" : [
+                {
+                    "gameTitle" : "NARAKA: BLADEPOINT",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 540.6875814837028,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "7 Days to Die",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "alerom",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2020,3,20),
+            "isRefund" : False,
+            "subtotal" : 92.10,
+            "lineItems" : [
+                {
+                    "gameTitle" : "VRChat",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 92.10,
+                    "isDiscounted" : True
+                },
+                {
+                    "gameTitle" : "Sid Meier’s Civilization® VI",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                },
+            ]
+        },
+        {
+            "customerUsername" : "paubre",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2016, 8, 12),
+            "isRefund" : False,
+            "subtotal" : 11097.89,
+            "lineItems" : [
+                {
+                    "gameTitle" : "No Mans Sky",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 11097.89,
+                    "isDiscounted" : False
+                }
+            ]
+        },
+        {
+            "customerUsername" : "karhow",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2020, 11, 28),
+            "isRefund" : False,
+            "subtotal" : 0,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "jesfle",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2016,1,15),
+            "isRefund" : False,
+            "subtotal" : 0,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Undertale",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "walwal",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2021, 6, 20),
+            "isRefund" : False,
+            "subtotal" : 9400.80,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Hades",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 9400.80,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "paujoh",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025,10,17),
+            "isRefund" : False,
+            "subtotal" : 5280.90,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Vampire Survivors",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 5280.896863946048,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "whimur",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2017, 4, 15),
+            "isRefund" : False,
+            "subtotal" : 0,
+            "lineItems" : [
+                {
+                    "gameTitle" : "DARK SOULS™ III",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "rachic",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2021, 9, 28),
+            "isRefund" : False,
+            "subtotal" : 0,
+            "lineItems" : [
+                {
+                    "gameTitle" : "New World: Aeternum",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "alerya",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2022, 12, 25),
+            "isRefund" : False,
+            "subtotal" : 0,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Battlefield™ 2042",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "pauest",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2024, 1, 1),
+            "isRefund" : False,
+            "subtotal" : 551.16,
+            "lineItems" : [
+                {
+                    "gameTitle" : "THE FINALS",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 551.16,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "alawil",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2019, 2, 14),
+            "isRefund" : False,
+            "subtotal" : 3375.23,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Fallout 4",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 3375.23,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "benmor",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025, 2, 20),
+            "isRefund" : False,
+            "subtotal" : 249.74,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Marvel Rivals",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 249.74,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "petgil",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2021, 8, 15),
+            "isRefund" : False,
+            "subtotal" : 0,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Project Zomboid",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "donspe",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2023, 5, 5),
+            "isRefund" : False,
+            "subtotal" : 1309.10,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Deep Rock Galactic",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 1309.10,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "aleell",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025,10,14),
+            "isRefund" : False,
+            "subtotal" : 11097.89,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Path of Exile",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 11097.89,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "darjon",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025, 4, 22),
+            "isRefund" : False,
+            "subtotal" : 9400.80,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Path of Exile",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 9400.80,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "ricgoo",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2020, 5, 9),
+            "isRefund" : False,
+            "subtotal" : 0,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Hearts of Iron IV",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 0,
+                    "isDiscounted" : True
+                }
+            ]
+        },
+        {
+            "customerUsername" : "connor",
+            "customer_id" : "*****",
+            "transactionDate" : datetime(2025, 3, 15),
+            "isRefund" : False,
+            "subtotal" : 2822.77,
+            "lineItems" : [
+                {
+                    "gameTitle" : "Hogwarts Legacy",
+                    "game_id" : "*****",
+                    "purchasePricePeso" : 2822.77,
+                    "isDiscounted" : False
+                }
+            ]
+        },
+    ]
+
+    transactionsRefund = [
+        {
+            "customerUsername" : "rayjoh",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "NARAKA: BLADEPOINT",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,23),
+            "isRefund" : True,
+            "balanceRefunded" : 540.68
+        },
+        {
+            "customerUsername" : "rayjoh",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,23),
+            "isRefund" : True,
+            "balanceRefunded" : 0
+        },
+        {
+            "customerUsername" : "chrmit",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "Hogwarts Legacy",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,26),
+            "isRefund" : True,
+            "balanceRefunded" : 2822.76
+        },
+        {
+            "customerUsername" : "clapen",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "NARAKA: BLADEPOINT",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,23),
+            "isRefund" : True,
+            "balanceRefunded" : 540.68
+        },
+        {
+            "customerUsername" : "karhow",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,23),
+            "isRefund" : True,
+            "balanceRefunded" : 540.68
+        },
+        {
+            "customerUsername" : "hanols",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "Marvel Rivals",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,26),
+            "isRefund" : True,
+            "balanceRefunded" : 540.68
+        },
+        {
+            "customerUsername" : "samgon",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "Hogwarts LegacyT",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,29),
+            "isRefund" : True,
+            "balanceRefunded" : 2822.76
+        },
+        {
+            "customerUsername" : "nannel",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "People Playground",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,23),
+            "isRefund" : True,
+            "balanceRefunded" : 0
+        },
+        {
+            "customerUsername" : "statuc",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "THE FINALS",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,30),
+            "isRefund" : True,
+            "balanceRefunded" : 551.16
+        },
+        {
+            "customerUsername" : "statuc",
+            "customer_id" : "*****",
+            "refundedGameTitle" : "Fallout 4",
+            "refundedGameStore_id" : "*****",
+            "refundedGameLibrary_id" : "*****",
+            "transactionDate" : datetime(2025,11,25),
+            "isRefund" : True,
+            "balanceRefunded" : 3375.22
+        }
+    ]
+
     db['customerAccounts'].insert_many(customerAccounts)
     db['storeGameInfo'].insert_many(storeGameInfo)
+    db['ownedGameInfo'].insert_many(ownedGameInfo)
+    db['gameReviews'].insert_many(gameReviews)
+    db['transactions'].insert_many(transactionsBuy)
+    db['transactions'].insert_many(transactionsRefund)
 
     closeConnection(conn) 
