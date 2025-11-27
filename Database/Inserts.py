@@ -27,8 +27,8 @@ if __name__ == "__main__":
             "emailAddress": "uhardin@gmail.com",
             "age": 42,
             "birthDate": datetime(1983, 12, 2),
-            "phoneNumber": "'+95 65 258 441 3336",
-            "walletBalancePeso": 673.0896245821835
+            "phoneNumber": "+95 65 258 441 3336",
+            "walletBalancePeso": 673.09
         },
         {
             "username": "sabcol",
@@ -39,8 +39,8 @@ if __name__ == "__main__":
             "emailAddress": "galvanelizabeth@yahoo.com",
             "age": 53,
             "birthDate": datetime(1972, 8, 7),
-            "phoneNumber": "'+6630 647 985 5344",
-            "walletBalancePeso": 82.08713139715081
+            "phoneNumber": "+6630 647 985 5344",
+            "walletBalancePeso": 82.09
         },
         {
             "username": "ronwri",
@@ -51,8 +51,8 @@ if __name__ == "__main__":
             "emailAddress": "warnold@yahoo.com",
             "age": 20,
             "birthDate": datetime(2005, 3, 8),
-            "phoneNumber": "'+60 10 796 894 6850",
-            "walletBalancePeso": 628.612929114156
+            "phoneNumber": "+60 10 796 894 6850",
+            "walletBalancePeso": 628.61
         },
         {
             "username": "bobpar",
@@ -63,8 +63,8 @@ if __name__ == "__main__":
             "emailAddress": "thomas55@yahoo.com",
             "age": 64,
             "birthDate": datetime(1961, 2, 8),
-            "phoneNumber": "'+65995 331 484 4665",
-            "walletBalancePeso": 164.3911703768176
+            "phoneNumber": "+65995 331 484 4665",
+            "walletBalancePeso": 164.39
         },
         {
             "username": "hanols",
@@ -75,8 +75,8 @@ if __name__ == "__main__":
             "emailAddress": "troybryan@gmail.com",
             "age": 62,
             "birthDate": datetime(1963, 8, 4),
-            "phoneNumber": "'+65995 331 484 4665",
-            "walletBalancePeso": 146.28708335860142
+            "phoneNumber": "+65995 331 484 4665",
+            "walletBalancePeso": 146.29
         },
         {
             "username": "liswea",
@@ -87,8 +87,8 @@ if __name__ == "__main__":
             "emailAddress": "darrencoffey@hotmail.com",
             "age": 62,
             "birthDate": datetime(1963, 8, 23),
-            "phoneNumber": "'+856970 624 160 2718",
-            "walletBalancePeso": 180.73489078523355
+            "phoneNumber": "+856970 624 160 2718",
+            "walletBalancePeso": 180.73
         },
         {
             "username": "kailam",
@@ -99,8 +99,8 @@ if __name__ == "__main__":
             "emailAddress": "browndavid@gmail.com",
             "age": 50,
             "birthDate": datetime(1975, 7, 8),
-            "phoneNumber": "'+855 29 438 9286",
-            "walletBalancePeso": 490.2473713833288
+            "phoneNumber": "+855 29 438 9286",
+            "walletBalancePeso": 490.25
         },
         {
             "username": "rayjoh",
@@ -111,8 +111,8 @@ if __name__ == "__main__":
             "emailAddress": "vgibson@yahoo.com",
             "age": 40,
             "birthDate": datetime(1985, 6, 13),
-            "phoneNumber": "'+65995 331 484 4665",
-            "walletBalancePeso": 587.3624597984689
+            "phoneNumber": "+65995 331 484 4665",
+            "walletBalancePeso": 587.36
         },
         {
             "username": "eridaw",
@@ -123,8 +123,8 @@ if __name__ == "__main__":
             "emailAddress": "evansgabriel@gmail.com",
             "age": 20,
             "birthDate": datetime(2005, 11, 20),
-            "phoneNumber": "'+6630 647 985 5344",
-            "walletBalancePeso": 454.40586093712994
+            "phoneNumber": "+6630 647 985 5344",
+            "walletBalancePeso": 454.41
         },
         {
             "username": "samgon",
@@ -135,8 +135,8 @@ if __name__ == "__main__":
             "emailAddress": "caleb25@yahoo.com",
             "age": 54,
             "birthDate": datetime(1971, 9, 1),
-            "phoneNumber": "'+84974 506 709 2624",
-            "walletBalancePeso": 239.60806929024386
+            "phoneNumber": "+84974 506 709 2624",
+            "walletBalancePeso": 239.61
         },
         {
             "username": "nannel",
@@ -147,8 +147,8 @@ if __name__ == "__main__":
             "emailAddress": "laura38@hotmail.com",
             "age": 63,
             "birthDate": datetime(1962, 3, 13),
-            "phoneNumber": "'+95 65 258 441 3336",
-            "walletBalancePeso": 426.9386057394909
+            "phoneNumber": "+95 65 258 441 3336",
+            "walletBalancePeso": 426.94
         },
         {
             "username": "chrmit",
@@ -159,8 +159,8 @@ if __name__ == "__main__":
             "emailAddress": "joseph21@gmail.com",
             "age": 54,
             "birthDate": datetime(1971, 12, 12),
-            "phoneNumber": "'+63910 307 702 7488",
-            "walletBalancePeso": 151.3650352925619
+            "phoneNumber": "+63910 307 702 7488",
+            "walletBalancePeso": 151.37
         },
         {
             "username": "clapen",
@@ -171,8 +171,8 @@ if __name__ == "__main__":
             "emailAddress": "gomezzachary@gmail.com",
             "age": 36,
             "birthDate": datetime(1989, 3, 4),
-            "phoneNumber": "'+856970 624 160 2718",
-            "walletBalancePeso": 251.5291012310439
+            "phoneNumber": "+856970 624 160 2718",
+            "walletBalancePeso": 251.53
         },
         {
             "username": "alerom",
@@ -183,8 +183,8 @@ if __name__ == "__main__":
             "emailAddress": "seanleonard@yahoo.com",
             "age": 48,
             "birthDate": datetime(1977, 2, 25),
-            "phoneNumber": "'+62810 640 720 9408",
-            "walletBalancePeso": 462.7483197208195
+            "phoneNumber": "+62810 640 720 9408",
+            "walletBalancePeso": 462.75
         },
         {
             "username": "paubre",
@@ -195,8 +195,8 @@ if __name__ == "__main__":
             "emailAddress": "jmeyer@hotmail.com",
             "age": 50,
             "birthDate": datetime(1975, 7, 15),
-            "phoneNumber": "'+65995 331 484 4665",
-            "walletBalancePeso": 789.5851920019587
+            "phoneNumber": "+65995 331 484 4665",
+            "walletBalancePeso": 789.59
         },
         {
             "username": "karhow",
@@ -207,8 +207,8 @@ if __name__ == "__main__":
             "emailAddress": "mitchellryan@hotmail.com",
             "age": 23,
             "birthDate": datetime(2002, 11, 22),
-            "phoneNumber": "'+60 10 796 894 6850",
-            "walletBalancePeso": 497.31001868394895
+            "phoneNumber": "+60 10 796 894 6850",
+            "walletBalancePeso": 497.31
         },
         {
             "username": "jesfle",
@@ -219,8 +219,8 @@ if __name__ == "__main__":
             "emailAddress": "woodwardwilliam@hotmail.com",
             "age": 37,
             "birthDate": datetime(1988, 9, 12),
-            "phoneNumber": "'+856970 624 160 2718",
-            "walletBalancePeso": 218.35447969441182
+            "phoneNumber": "+856970 624 160 2718",
+            "walletBalancePeso": 218.35
         },
         {
             "username": "walwal",
@@ -231,8 +231,8 @@ if __name__ == "__main__":
             "emailAddress": "freemanmartha@gmail.com",
             "age": 59,
             "birthDate": datetime(1966, 10, 12),
-            "phoneNumber": "'+6630 647 985 5344",
-            "walletBalancePeso": 107.67901458868741
+            "phoneNumber": "+6630 647 985 5344",
+            "walletBalancePeso": 107.68
         },
         {
             "username": "paujoh",
@@ -243,8 +243,8 @@ if __name__ == "__main__":
             "emailAddress": "steven95@yahoo.com",
             "age": 35,
             "birthDate": datetime(1990, 8, 8),
-            "phoneNumber": "'+63910 307 702 7488",
-            "walletBalancePeso": 591.7588716148557
+            "phoneNumber": "+63910 307 702 7488",
+            "walletBalancePeso": 591.76
         },
         {
             "username": "whimur",
@@ -255,8 +255,8 @@ if __name__ == "__main__":
             "emailAddress": "elizabeth26@yahoo.com",
             "age": 29,
             "birthDate": datetime(1996, 2, 24),
-            "phoneNumber": "'+63910 307 702 7488",
-            "walletBalancePeso": 884.7848778244477
+            "phoneNumber": "+63910 307 702 7488",
+            "walletBalancePeso": 884.78
         },
         {
             "username": "rachic",
@@ -267,8 +267,8 @@ if __name__ == "__main__":
             "emailAddress": "cranesara@hotmail.com",
             "age": 53,
             "birthDate": datetime(1972, 10, 8),
-            "phoneNumber": "'+62810 640 720 9408",
-            "walletBalancePeso": 578.6396046346415
+            "phoneNumber": "+62810 640 720 9408",
+            "walletBalancePeso": 578.64
         },
         {
             "username": "alerya",
@@ -279,8 +279,8 @@ if __name__ == "__main__":
             "emailAddress": "daniel77@hotmail.com",
             "age": 34,
             "birthDate": datetime(1991, 12, 30),
-            "phoneNumber": "'+95 65 258 441 3336",
-            "walletBalancePeso": 411.4867884208052
+            "phoneNumber": "+95 65 258 441 3336",
+            "walletBalancePeso": 411.49
         },
         {
             "username": "pauest",
@@ -291,8 +291,8 @@ if __name__ == "__main__":
             "emailAddress": "martinezelizabeth@yahoo.com",
             "age": 23,
             "birthDate": datetime(2002, 10, 21),
-            "phoneNumber": "'+84974 506 709 2624",
-            "walletBalancePeso": 335.0513502370871
+            "phoneNumber": "+84974 506 709 2624",
+            "walletBalancePeso": 335.05
         },
         {
             "username": "alawil",
@@ -303,8 +303,8 @@ if __name__ == "__main__":
             "emailAddress": "charlesbuck@gmail.com",
             "age": 62,
             "birthDate": datetime(1963, 7, 8),
-            "phoneNumber": "'+855 29 438 9286",
-            "walletBalancePeso": 355.87120627532784
+            "phoneNumber": "+855 29 438 9286",
+            "walletBalancePeso": 355.87
         },
         {
             "username": "benmor",
@@ -315,8 +315,8 @@ if __name__ == "__main__":
             "emailAddress": "hwilliams@hotmail.com",
             "age": 48,
             "birthDate": datetime(1977, 11, 19),
-            "phoneNumber": "'+62810 640 720 9408",
-            "walletBalancePeso": 697.2790696669086
+            "phoneNumber": "+62810 640 720 9408",
+            "walletBalancePeso": 697.28
         },
         {
             "username": "petgil",
@@ -327,8 +327,8 @@ if __name__ == "__main__":
             "emailAddress": "joshuaalvarado@yahoo.com",
             "age": 65,
             "birthDate": datetime(1960, 1, 31),
-            "phoneNumber": "'+60 10 796 894 6850",
-            "walletBalancePeso": 813.3258386271077
+            "phoneNumber": "+60 10 796 894 6850",
+            "walletBalancePeso": 813.33
         },
         {
             "username": "donspe",
@@ -339,8 +339,8 @@ if __name__ == "__main__":
             "emailAddress": "jguzman@hotmail.com",
             "age": 57,
             "birthDate": datetime(1968, 6, 7),
-            "phoneNumber": "'+62810 640 720 9408",
-            "walletBalancePeso": 929.3025585675663
+            "phoneNumber": "+62810 640 720 9408",
+            "walletBalancePeso": 929.30
         },
         {
             "username": "sarmad",
@@ -351,8 +351,8 @@ if __name__ == "__main__":
             "emailAddress": "ostokes@hotmail.com",
             "age": 42,
             "birthDate": datetime(1983, 2, 5),
-            "phoneNumber": "'+6630 647 985 5344",
-            "walletBalancePeso": 401.42743330972144
+            "phoneNumber": "+6630 647 985 5344",
+            "walletBalancePeso": 401.43
         },
         {
             "username": "aleell",
@@ -363,8 +363,8 @@ if __name__ == "__main__":
             "emailAddress": "jodiramirez@hotmail.com",
             "age": 38,
             "birthDate": datetime(1987, 5, 26),
-            "phoneNumber": "'+95 65 258 441 3336",
-            "walletBalancePeso": 528.1736884399741
+            "phoneNumber": "+95 65 258 441 3336",
+            "walletBalancePeso": 528.17
         },
         {
             "username": "darjon",
@@ -375,8 +375,8 @@ if __name__ == "__main__":
             "emailAddress": "wardvicki@yahoo.com",
             "age": 21,
             "birthDate": datetime(2004, 7, 23),
-            "phoneNumber": "'+95 65 258 441 3336",
-            "walletBalancePeso": 743.8643954446442
+            "phoneNumber": "+95 65 258 441 3336",
+            "walletBalancePeso": 743.86
         },
         {
             "username": "ricgoo",
@@ -387,8 +387,8 @@ if __name__ == "__main__":
             "emailAddress": "creed@yahoo.com",
             "age": 57,
             "birthDate": datetime(1968, 10, 18),
-            "phoneNumber": "'+84974 506 709 2624",
-            "walletBalancePeso": 229.74349181958863
+            "phoneNumber": "+84974 506 709 2624",
+            "walletBalancePeso": 229.74
         },
         {
             "username": "connor",
@@ -399,8 +399,8 @@ if __name__ == "__main__":
             "emailAddress": "ambergriffith@gmail.com",
             "age": 48,
             "birthDate": datetime(1977, 10, 31),
-            "phoneNumber": "'+63910 307 702 7488",
-            "walletBalancePeso": 986.0223434057023
+            "phoneNumber": "+63910 307 702 7488",
+            "walletBalancePeso": 986.02
         },
         {
             "username": "searog",
@@ -411,8 +411,8 @@ if __name__ == "__main__":
             "emailAddress": "mendezcolin@gmail.com",
             "age": 38,
             "birthDate": datetime(1987, 1, 15),
-            "phoneNumber": "'+65995 331 484 4665",
-            "walletBalancePeso": 752.6729491456148
+            "phoneNumber": "+65995 331 484 4665",
+            "walletBalancePeso": 752.67
         },
         {
             "username": "jamcoh",
@@ -423,8 +423,8 @@ if __name__ == "__main__":
             "emailAddress": "arobertson@gmail.com",
             "age": 46,
             "birthDate": datetime(1979, 4, 20),
-            "phoneNumber": "'+62810 640 720 9408",
-            "walletBalancePeso": 708.9169798828582
+            "phoneNumber": "+62810 640 720 9408",
+            "walletBalancePeso": 708.92
         },
         {
             "username": "brafis",
@@ -435,8 +435,8 @@ if __name__ == "__main__":
             "emailAddress": "buckleykevin@hotmail.com",
             "age": 30,
             "birthDate": datetime(1995, 8, 7),
-            "phoneNumber": "'+60 10 796 894 6850",
-            "walletBalancePeso": 189.48462743944586
+            "phoneNumber": "+60 10 796 894 6850",
+            "walletBalancePeso": 189.48
         },
         {
             "username": "donlow",
@@ -447,8 +447,8 @@ if __name__ == "__main__":
             "emailAddress": "amanda46@yahoo.com",
             "age": 36,
             "birthDate": datetime(1989, 10, 15),
-            "phoneNumber": "'+62810 640 720 9408",
-            "walletBalancePeso": 886.3938238344557
+            "phoneNumber": "+62810 640 720 9408",
+            "walletBalancePeso": 886.39
         },
         {
             "username": "johjoh",
@@ -459,8 +459,8 @@ if __name__ == "__main__":
             "emailAddress": "johndavis@hotmail.com",
             "age": 38,
             "birthDate": datetime(1987, 8, 27),
-            "phoneNumber": "'+6630 647 985 5344",
-            "walletBalancePeso": 153.78598656859515
+            "phoneNumber": "+6630 647 985 5344",
+            "walletBalancePeso": 153.79
         },
         {
             "username": "ricpar",
@@ -471,8 +471,8 @@ if __name__ == "__main__":
             "emailAddress": "perrygary@gmail.com",
             "age": 45,
             "birthDate": datetime(1980, 12, 27),
-            "phoneNumber": "'+855 29 438 9286",
-            "walletBalancePeso": 709.2047994209119
+            "phoneNumber": "+855 29 438 9286",
+            "walletBalancePeso": 709.20
         },
         {
             "username": "aliglo",
@@ -483,8 +483,8 @@ if __name__ == "__main__":
             "emailAddress": "ejohnson@gmail.com",
             "age": 38,
             "birthDate": datetime(1987, 10, 10),
-            "phoneNumber": "'+60 10 796 894 6850",
-            "walletBalancePeso": 133.2176592658391
+            "phoneNumber": "+60 10 796 894 6850",
+            "walletBalancePeso": 133.22
         },
         {
             "username": "sheper",
@@ -495,8 +495,8 @@ if __name__ == "__main__":
             "emailAddress": "kfisher@hotmail.com",
             "age": 21,
             "birthDate": datetime(2004, 12, 18),
-            "phoneNumber": "'+95 65 258 441 3336",
-            "walletBalancePeso": 53.612058753713846
+            "phoneNumber": "+95 65 258 441 3336",
+            "walletBalancePeso": 53.61
         },
         {
             "username": "antsan",
@@ -507,8 +507,8 @@ if __name__ == "__main__":
             "emailAddress": "dawnpreston@gmail.com",
             "age": 53,
             "birthDate": datetime(1972, 7, 11),
-            "phoneNumber": "'+84974 506 709 2624",
-            "walletBalancePeso": 603.2053842629031
+            "phoneNumber": "+84974 506 709 2624",
+            "walletBalancePeso": 603.21
         },
         {
             "username": "micdix",
@@ -519,8 +519,8 @@ if __name__ == "__main__":
             "emailAddress": "keith77@yahoo.com",
             "age": 28,
             "birthDate": datetime(1997, 4, 27),
-            "phoneNumber": "'+60 10 796 894 6850",
-            "walletBalancePeso": 869.5491095600768
+            "phoneNumber": "+60 10 796 894 6850",
+            "walletBalancePeso": 869.55
         },
         {
             "username": "donvaz",
@@ -531,8 +531,8 @@ if __name__ == "__main__":
             "emailAddress": "pageangela@hotmail.com",
             "age": 61,
             "birthDate": datetime(1964, 12, 19),
-            "phoneNumber": "'+855 29 438 9286",
-            "walletBalancePeso": 779.1797905630443
+            "phoneNumber": "+855 29 438 9286",
+            "walletBalancePeso": 779.18
         },
         {
             "username": "tylmel",
@@ -543,8 +543,8 @@ if __name__ == "__main__":
             "emailAddress": "mckinneyteresa@yahoo.com",
             "age": 33,
             "birthDate": datetime(1992, 1, 3),
-            "phoneNumber": "'+6630 647 985 5344",
-            "walletBalancePeso": 568.0979029582904
+            "phoneNumber": "+6630 647 985 5344",
+            "walletBalancePeso": 568.10
         },
         {
             "username": "eriash",
@@ -555,8 +555,8 @@ if __name__ == "__main__":
             "emailAddress": "englishchristopher@gmail.com",
             "age": 57,
             "birthDate": datetime(1968, 12, 30),
-            "phoneNumber": "'+60 10 796 894 6850",
-            "walletBalancePeso": 284.597375675467
+            "phoneNumber": "+60 10 796 894 6850",
+            "walletBalancePeso": 284.60
         },
         {
             "username": "heacon",
@@ -567,8 +567,8 @@ if __name__ == "__main__":
             "emailAddress": "bernardvictor@gmail.com",
             "age": 38,
             "birthDate": datetime(1987, 2, 22),
-            "phoneNumber": "'+84974 506 709 2624",
-            "walletBalancePeso": 589.284767753526
+            "phoneNumber": "+84974 506 709 2624",
+            "walletBalancePeso": 589.28
         },
         {
             "username": "judski",
@@ -579,8 +579,8 @@ if __name__ == "__main__":
             "emailAddress": "scarter@yahoo.com",
             "age": 58,
             "birthDate": datetime(1967, 2, 22),
-            "phoneNumber": "'+855 29 438 9286",
-            "walletBalancePeso": 953.1916320307228
+            "phoneNumber": "+855 29 438 9286",
+            "walletBalancePeso": 953.19
         },
         {
             "username": "ricfos",
@@ -591,8 +591,8 @@ if __name__ == "__main__":
             "emailAddress": "ralph34@hotmail.com",
             "age": 70,
             "birthDate": datetime(1955, 1, 7),
-            "phoneNumber": "'+63910 307 702 7488",
-            "walletBalancePeso": 220.23308580322978
+            "phoneNumber": "+63910 307 702 7488",
+            "walletBalancePeso": 220.23
         },
         {
             "username": "marsim",
@@ -603,8 +603,8 @@ if __name__ == "__main__":
             "emailAddress": "iosborn@hotmail.com",
             "age": 36,
             "birthDate": datetime(1989, 4, 12),
-            "phoneNumber": "'+84974 506 709 2624",
-            "walletBalancePeso": 344.5960688760814
+            "phoneNumber": "+84974 506 709 2624",
+            "walletBalancePeso": 344.60
         },
         {
             "username": "katpea",
@@ -615,11 +615,434 @@ if __name__ == "__main__":
             "emailAddress": "schultzbenjamin@gmail.com",
             "age": 38,
             "birthDate": datetime(1987, 4, 11),
-            "phoneNumber": "'+84974 506 709 2624",
-            "walletBalancePeso": 865.4827897076999
+            "phoneNumber": "+84974 506 709 2624",
+            "walletBalancePeso": 865.48
         }
     ]
-    
-    db.customerAccounts.insert_many(customerAccounts)
+
+
+    storeGameInfo = [
+        {
+            "gameTitle": "Battlefield™ 2042",
+            "reviewVerdict": "Mostly Negative",
+            "averageRating": 25,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(2004, 6, 2),
+            "developer": "DICE",
+            "categories": [
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Battlefield™ 2042 is a first-person shooter that marks the return to the iconic all-out warfare of t...",
+        },
+        {
+            "gameTitle": "THE FINALS",
+            "reviewVerdict": "Mixed",
+            "averageRating": 63,
+            "originalPricePeso": 3242.13,
+            "currentPricePeso": 551.16,
+            "isDiscounted": True,
+            "isFree": False,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 83,
+            "releaseDate": datetime(1991, 12, 27),
+            "developer": "Embark Studios",
+            "categories": [
+                "Multi-player",
+                "PvP",
+                "Online PvP",
+                "Co-op",
+                "Online Co-op",
+                "Cross-Platform Multiplayer"
+            ],
+            "description": "Join THE FINALS, the world-famous, free-to-play, combat-centered game show! Fight alongside your tea...",
+        },
+        {
+            "gameTitle": "Fallout 4",
+            "reviewVerdict": "Mixed",
+            "averageRating": 41,
+            "originalPricePeso": 4687.82,
+            "currentPricePeso": 3375.23,
+            "isDiscounted": True,
+            "isFree": False,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 28,
+            "releaseDate": datetime(1914, 9, 27),
+            "developer": "Bethesda Game Studios",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Bethesda Game Studios, the award-winning creators of Fallout 3 and The Elder Scrolls V: Skyrim, welc...",
+        },
+        {
+            "gameTitle": "Vampire Survivors",
+            "reviewVerdict": "Mixed",
+            "averageRating": 60,
+            "originalPricePeso": 9601.63,
+            "currentPricePeso": 5280.90,
+            "isDiscounted": True,
+            "isFree": False,
+            "isEarlyAccess": False,
+            "currentDiscountPercent": 45,
+            "releaseDate": datetime(1997, 12, 7),
+            "developer": "poncle",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Mow down thousands of night creatures and survive until dawn! Vampire Survivors is a gothic horror c...",
+        },
+        {
+            "gameTitle": "Hearts of Iron IV",
+            "reviewVerdict": "Mixed",
+            "averageRating": 42,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(1982, 12, 21),
+            "developer": "Paradox Development Studio",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Victory is at your fingertips! Your ability to lead your nation is your supreme weapon, the strategy...",
+        },
+        {
+            "gameTitle": "DARK SOULS™ III",
+            "reviewVerdict": "Mixed",
+            "averageRating": 60,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(2007, 9, 20),
+            "developer": "FromSoftware, Inc.",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Dark Souls continues to push the boundaries with the latest, ambitious chapter in the critically-acc...",
+        },
+        {
+            "gameTitle": "Marvel Rivals",
+            "reviewVerdict": "Mostly Negative",
+            "averageRating": 35,
+            "originalPricePeso": 8324.51,
+            "currentPricePeso": 249.74,
+            "isDiscounted": True,
+            "isFree": False,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 97,
+            "releaseDate": datetime(1926, 12, 13),
+            "developer": "NetEase Games",
+            "categories": [
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Marvel Rivals is a Super Hero Team-Based PVP Shooter! Assemble an all-star Marvel squad, devise coun...",
+        },
+        {
+            "gameTitle": "NARAKA: BLADEPOINT",
+            "reviewVerdict": "Positive",
+            "averageRating": 78,
+            "originalPricePeso": 2703.44,
+            "currentPricePeso": 540.69,
+            "isDiscounted": True,
+            "isFree": False,
+            "isEarlyAccess": False,
+            "currentDiscountPercent": 80,
+            "releaseDate": datetime(2018, 12, 3),
+            "developer": "24 Entertainment",
+            "categories": [
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Dive into the legends of the Far East in NARAKA: BLADEPOINT; team up with friends in fast-paced mele...",
+        },
+        {
+            "gameTitle": "Project Zomboid",
+            "reviewVerdict": "Mixed",
+            "averageRating": 61,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(1943, 5, 1),
+            "developer": "The Indie Stone",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Project Zomboid is the ultimate in zombie survival. Alone or in MP: you loot, build, craft, fight, f...",
+        },
+        {
+            "gameTitle": "Path of Exile",
+            "reviewVerdict": "Negative",
+            "averageRating": 12,
+            "originalPricePeso": 12983.94,
+            "currentPricePeso": 12983.94,
+            "isDiscounted": False,
+            "isFree": False,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(1990, 8, 3),
+            "developer": "Grinding Gear Games",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "You are an Exile, struggling to survive on the dark continent of Wraeclast, as you fight to earn pow...",
+        },
+        {
+            "gameTitle": "New World: Aeternum",
+            "reviewVerdict": "Mixed",
+            "averageRating": 65,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(1924, 7, 10),
+            "developer": "Amazon Games",
+            "categories": [
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Experience a thrilling action RPG set on the supernatural island of Aeternum. Forge your destiny on ...",
+        },
+        {
+            "gameTitle": "Hogwarts Legacy",
+            "reviewVerdict": "Mostly Negative",
+            "averageRating": 38,
+            "originalPricePeso": 2822.77,
+            "currentPricePeso": 2822.77,
+            "isDiscounted": False,
+            "isFree": False,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(2020, 8, 21),
+            "developer": "Avalanche Software",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Hogwarts Legacy is an immersive, open-world action RPG. Now you can take control of the action and b...",
+        },
+        {
+            "gameTitle": "People Playground",
+            "reviewVerdict": "Negative",
+            "averageRating": 4,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": False,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(1930, 8, 20),
+            "developer": "mestiez",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls in a large open space.",
+        },
+        {
+            "gameTitle": "Sid Meier’s Civilization® VI",
+            "reviewVerdict": "Mixed",
+            "averageRating": 51,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": False,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(1920, 1, 2),
+            "developer": "Firaxis Games",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Expand your empire, advance your culture and go head-to-head against history’s greatest leaders. Wil...",
+        },
+        {
+            "gameTitle": "7 Days to Die",
+            "reviewVerdict": "Mixed",
+            "averageRating": 49,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(2022, 10, 4),
+            "developer": "The Fun Pimps",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "7 Days to Die is an open-world game that is a unique combination of first-person shooter, survival h...",
+        },
+        {
+            "gameTitle": "Deep Rock Galactic",
+            "reviewVerdict": "Negative",
+            "averageRating": 13,
+            "originalPricePeso": 11900.91,
+            "currentPricePeso": 1309.10,
+            "isDiscounted": True,
+            "isFree": False,
+            "isEarlyAccess": False,
+            "currentDiscountPercent": 89,
+            "releaseDate": datetime(1971, 4, 13),
+            "developer": "Ghost Ship Games",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op",
+                "Steam Achievements"
+            ],
+            "description": "Deep Rock Galactic is a 1-4 player co-op FPS featuring badass space Dwarves, 100 percent destructible envir...",
+        },
+        {
+            "gameTitle": "VRChat",
+            "reviewVerdict": "Mixed",
+            "averageRating": 62,
+            "originalPricePeso": 9209.67,
+            "currentPricePeso": 92.10,
+            "isDiscounted": True,
+            "isFree": False,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 99,
+            "releaseDate": datetime(2025, 5, 16),
+            "developer": "VRChat Inc.",
+            "categories": [
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Join our growing community as you explore, play, and help craft the future of social VR. Create worl...",
+        },
+        {
+            "gameTitle": "No Mans Sky",
+            "reviewVerdict": "Mostly Negative",
+            "averageRating": 22,
+            "originalPricePeso": 11097.89,
+            "currentPricePeso": 11097.89,
+            "isDiscounted": False,
+            "isFree": False,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(1942, 8, 12),
+            "developer": "Hello Games",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "No Man's Sky is a game about exploration and survival in an infinite procedurally generated universe...",
+        },
+        {
+            "gameTitle": "Sekiro™: Shadows Die Twice - GOTY Edition",
+            "reviewVerdict": "Very Positive",
+            "averageRating": 82,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": False,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(2003, 9, 5),
+            "developer": "FromSoftware, Inc.",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Game of the Year - The Game Awards 2019 Best Action Game of 2019 - IGN Carve your own clever path to...",
+        },
+        {
+            "gameTitle": "Undertale",
+            "reviewVerdict": "Mixed",
+            "averageRating": 54,
+            "originalPricePeso": 0,
+            "currentPricePeso": 0,
+            "isDiscounted": True,
+            "isFree": True,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 0,
+            "releaseDate": datetime(1992, 2, 21),
+            "developer": "tobyfox",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "UNDERTALE! The RPG game where you don't have to destroy anyone.",
+        },
+        {
+            "gameTitle": "Hades",
+            "reviewVerdict": "Negative",
+            "averageRating": 17,
+            "originalPricePeso": 11751.00,
+            "currentPricePeso": 9400.80,
+            "isDiscounted": True,
+            "isFree": False,
+            "isEarlyAccess": True,
+            "currentDiscountPercent": 20,
+            "releaseDate": datetime(2018, 3, 17),
+            "developer": "Supergiant Games",
+            "categories": [
+                "Single-player",
+                "Multi-player",
+                "Co-op",
+                "Online Co-op"
+            ],
+            "description": "Defy the god of the dead as you hack and slash out of the Underworld in this rogue-like dungeon craw...",
+        }
+    ]
+
+    db['customerAccounts'].insert_many(customerAccounts)
+    db['storeGameInfo'].insert_many(storeGameInfo)
 
     closeConnection(conn) 
