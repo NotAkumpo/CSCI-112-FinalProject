@@ -294,7 +294,7 @@ if __name__ == "__main__":
         "ownerUsername" : "String",
         "owner_id" : "String (indexed)",
         "gameTitle" : "String",
-        "game_id" : "String (indexed)"
+        "game_id" : "String (indexed)",
         "licenseID" : "String",
         "hoursPlayed" : 0,
         "spaceRequiredGB" : 0,
