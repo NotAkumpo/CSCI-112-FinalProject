@@ -63,7 +63,7 @@
         "hoursPlayed": 64.2,
         "spaceRequiredGB": 18.5,
         "isInstalled": true,
-        "datePurchased": "2023-12-10"
+        "datePurchased": "2025-12-10"
     },
     {
         "ownerUsername": "sabcol",
@@ -95,8 +95,8 @@
         "licenseID": "fo4-goty-10293847",
         "hoursPlayed": 240.5,
         "spaceRequiredGB": 35.8,
-        "isInstalled": false,
-        "datePurchased": "2018-05-22"
+        "isInstalled": true,
+        "datePurchased": "2025-10-06"
     },
     {
         "ownerUsername": "ronwri",
@@ -129,7 +129,7 @@
         "hoursPlayed": 512.9,
         "spaceRequiredGB": 4.5,
         "isInstalled": true,
-        "datePurchased": "2019-06-06"
+        "datePurchased": "2025-06-06"
     },
     {
         "ownerUsername": "bobpar",
@@ -216,7 +216,7 @@
         "licenseID": "drg-rock-55667788",
         "hoursPlayed": 13.0,
         "spaceRequiredGB": 3.5,
-        "isInstalled": false,
+        "isInstalled": true,
         "datePurchased": "2021-09-09"
     },
     {
@@ -231,17 +231,6 @@
         "datePurchased": "2021-09-09"
     },
     {
-        "ownerUsername": "rayjoh",
-        "owner_id": "*****",
-        "gameTitle": "NARAKA: BLADEPOINT",
-        "game_id": "*****",
-        "licenseID": "narak-key-99001122",
-        "hoursPlayed": 89.4,
-        "spaceRequiredGB": 32.1,
-        "isInstalled": true,
-        "datePurchased": "2022-01-05"
-    },
-    {
         "ownerUsername": "eridaw",
         "owner_id": "*****",
         "gameTitle": "Path of Exile",
@@ -249,7 +238,7 @@
         "licenseID": "poe-free-00000001",
         "hoursPlayed": 4.2,
         "spaceRequiredGB": 40.0,
-        "isInstalled": false,
+        "isInstalled": true,
         "datePurchased": "2020-08-20"
     },
     {
@@ -338,7 +327,7 @@
         "hoursPlayed": 99.5,
         "spaceRequiredGB": 15.0,
         "isInstalled": true,
-        "datePurchased": "2019-10-31"
+        "datePurchased": "2019-10-11"
     },
     {
         "ownerUsername": "clapen",
@@ -381,7 +370,7 @@
         "licenseID": "nms-space-11992288",
         "hoursPlayed": 18.4,
         "spaceRequiredGB": 14.3,
-        "isInstalled": false,
+        "isInstalled": true,
         "datePurchased": "2016-08-12"
     },
     {
@@ -403,7 +392,7 @@
         "licenseID": "und-soul-44556677",
         "hoursPlayed": 10.5,
         "spaceRequiredGB": 0.3,
-        "isInstalled": false,
+        "isInstalled": true,
         "datePurchased": "2016-01-15"
     },
     {
@@ -414,7 +403,7 @@
         "licenseID": "hades-hell-99118822",
         "hoursPlayed": 5.2,
         "spaceRequiredGB": 15.6,
-        "isInstalled": false,
+        "isInstalled": true,
         "datePurchased": "2021-06-20"
     },
     {
@@ -426,7 +415,7 @@
         "hoursPlayed": 80.1,
         "spaceRequiredGB": 0.6,
         "isInstalled": true,
-        "datePurchased": "2022-10-01"
+        "datePurchased": "2025-10-17"
     },
     {
         "ownerUsername": "whimur",
@@ -458,7 +447,7 @@
         "licenseID": "bf2042-key-11229988",
         "hoursPlayed": 20.2,
         "spaceRequiredGB": 92.4,
-        "isInstalled": false,
+        "isInstalled": true,
         "datePurchased": "2022-12-25"
     },
     {
@@ -513,19 +502,8 @@
         "licenseID": "drg-key-55884411",
         "hoursPlayed": 3.5,
         "spaceRequiredGB": 3.5,
-        "isInstalled": false,
-        "datePurchased": "2023-05-05"
-    },
-    {
-        "ownerUsername": "sarmad",
-        "owner_id": "*****",
-        "gameTitle": "NARAKA: BLADEPOINT",
-        "game_id": "*****",
-        "licenseID": "narak-key-22558844",
-        "hoursPlayed": 200.1,
-        "spaceRequiredGB": 32.1,
         "isInstalled": true,
-        "datePurchased": "2021-11-11"
+        "datePurchased": "2023-05-05"
     },
     {
         "ownerUsername": "aleell",
@@ -535,19 +513,8 @@
         "licenseID": "poe-key-77441155",
         "hoursPlayed": 15.0,
         "spaceRequiredGB": 40.0,
-        "isInstalled": false,
-        "datePurchased": "2019-07-07"
-    },
-    {
-        "ownerUsername": "darjon",
-        "owner_id": "*****",
-        "gameTitle": "Hades",
-        "game_id": "*****",
-        "licenseID": "hades-key-99663322",
-        "hoursPlayed": 2.0,
-        "spaceRequiredGB": 15.6,
-        "isInstalled": false,
-        "datePurchased": "2022-04-22"
+        "isInstalled": true,
+        "datePurchased": "2025-10-14"
     },
     {
         "ownerUsername": "darjon",
@@ -580,205 +547,6 @@
         "hoursPlayed": 60.0,
         "spaceRequiredGB": 85.0,
         "isInstalled": true,
-        "datePurchased": "2023-03-15"
+        "datePurchased": "2025-03-15"
     },
-    {
-        "ownerUsername": "searog",
-        "owner_id": "*****",
-        "gameTitle": "People Playground",
-        "game_id": "*****",
-        "licenseID": "pp-key-33669900",
-        "hoursPlayed": 1.5,
-        "spaceRequiredGB": 0.8,
-        "isInstalled": false,
-        "datePurchased": "2024-01-10"
-    },
-    {
-        "ownerUsername": "jamcoh",
-        "owner_id": "*****",
-        "gameTitle": "Sid Meier’s Civilization® VI",
-        "game_id": "*****",
-        "licenseID": "civ6-key-77441100",
-        "hoursPlayed": 200.8,
-        "spaceRequiredGB": 12.0,
-        "isInstalled": true,
-        "datePurchased": "2018-11-20"
-    },
-    {
-        "ownerUsername": "brafis",
-        "owner_id": "*****",
-        "gameTitle": "7 Days to Die",
-        "game_id": "*****",
-        "licenseID": "7dtd-key-88552211",
-        "hoursPlayed": 55.4,
-        "spaceRequiredGB": 15.0,
-        "isInstalled": true,
-        "datePurchased": "2021-02-28"
-    },
-    {
-        "ownerUsername": "donlow",
-        "owner_id": "*****",
-        "gameTitle": "VRChat",
-        "game_id": "*****",
-        "licenseID": "vrc-key-99663300",
-        "hoursPlayed": 500.0,
-        "spaceRequiredGB": 20.5,
-        "isInstalled": true,
-        "datePurchased": "2019-12-12"
-    },
-    {
-        "ownerUsername": "johjoh",
-        "owner_id": "*****",
-        "gameTitle": "No Mans Sky",
-        "game_id": "*****",
-        "licenseID": "nms-key-11447700",
-        "hoursPlayed": 12.2,
-        "spaceRequiredGB": 14.3,
-        "isInstalled": false,
-        "datePurchased": "2020-08-08"
-    },
-    {
-        "ownerUsername": "ricpar",
-        "owner_id": "*****",
-        "gameTitle": "Sekiro™: Shadows Die Twice - GOTY Edition",
-        "game_id": "*****",
-        "licenseID": "sek-key-22558811",
-        "hoursPlayed": 40.0,
-        "spaceRequiredGB": 25.0,
-        "isInstalled": true,
-        "datePurchased": "2021-06-06"
-    },
-    {
-        "ownerUsername": "aliglo",
-        "owner_id": "*****",
-        "gameTitle": "Undertale",
-        "game_id": "*****",
-        "licenseID": "und-key-33669922",
-        "hoursPlayed": 8.8,
-        "spaceRequiredGB": 0.3,
-        "isInstalled": true,
-        "datePurchased": "2017-10-31"
-    },
-    {
-        "ownerUsername": "sheper",
-        "owner_id": "*****",
-        "gameTitle": "Hades",
-        "game_id": "*****",
-        "licenseID": "hades-key-44770033",
-        "hoursPlayed": 66.6,
-        "spaceRequiredGB": 15.6,
-        "isInstalled": true,
-        "datePurchased": "2022-12-01"
-    },
-    {
-        "ownerUsername": "antsan",
-        "owner_id": "*****",
-        "gameTitle": "Vampire Survivors",
-        "game_id": "*****",
-        "licenseID": "vs-key-55881144",
-        "hoursPlayed": 25.0,
-        "spaceRequiredGB": 0.6,
-        "isInstalled": true,
-        "datePurchased": "2023-05-15"
-    },
-    {
-        "ownerUsername": "micdix",
-        "owner_id": "*****",
-        "gameTitle": "DARK SOULS™ III",
-        "game_id": "*****",
-        "licenseID": "ds3-key-66992255",
-        "hoursPlayed": 88.0,
-        "spaceRequiredGB": 25.0,
-        "isInstalled": false,
-        "datePurchased": "2018-09-09"
-    },
-    {
-        "ownerUsername": "donvaz",
-        "owner_id": "*****",
-        "gameTitle": "New World: Aeternum",
-        "game_id": "*****",
-        "licenseID": "nw-key-77003366",
-        "hoursPlayed": 10.0,
-        "spaceRequiredGB": 50.5,
-        "isInstalled": false,
-        "datePurchased": "2021-10-10"
-    },
-    {
-        "ownerUsername": "tylmel",
-        "owner_id": "*****",
-        "gameTitle": "Battlefield™ 2042",
-        "game_id": "*****",
-        "licenseID": "bf2042-key-88114477",
-        "hoursPlayed": 5.5,
-        "spaceRequiredGB": 92.4,
-        "isInstalled": true,
-        "datePurchased": "2023-11-11"
-    },
-    {
-        "ownerUsername": "eriash",
-        "owner_id": "*****",
-        "gameTitle": "THE FINALS",
-        "game_id": "*****",
-        "licenseID": "finals-key-99225588",
-        "hoursPlayed": 33.3,
-        "spaceRequiredGB": 18.5,
-        "isInstalled": true,
-        "datePurchased": "2024-02-28"
-    },
-    {
-        "ownerUsername": "heacon",
-        "owner_id": "*****",
-        "gameTitle": "Fallout 4",
-        "game_id": "*****",
-        "licenseID": "fo4-key-00336699",
-        "hoursPlayed": 100.0,
-        "spaceRequiredGB": 35.8,
-        "isInstalled": true,
-        "datePurchased": "2017-07-04"
-    },
-    {
-        "ownerUsername": "judski",
-        "owner_id": "*****",
-        "gameTitle": "Hearts of Iron IV",
-        "game_id": "*****",
-        "licenseID": "hoi4-key-11447700",
-        "hoursPlayed": 1000.0,
-        "spaceRequiredGB": 4.5,
-        "isInstalled": true,
-        "datePurchased": "2016-06-06"
-    },
-    {
-        "ownerUsername": "ricfos",
-        "owner_id": "*****",
-        "gameTitle": "Marvel Rivals",
-        "game_id": "*****",
-        "licenseID": "mr-key-22558811",
-        "hoursPlayed": 2.0,
-        "spaceRequiredGB": 25.0,
-        "isInstalled": true,
-        "datePurchased": "2025-03-03"
-    },
-    {
-        "ownerUsername": "marsim",
-        "owner_id": "*****",
-        "gameTitle": "Project Zomboid",
-        "game_id": "*****",
-        "licenseID": "pz-key-33669922",
-        "hoursPlayed": 45.0,
-        "spaceRequiredGB": 3.2,
-        "isInstalled": true,
-        "datePurchased": "2023-08-08"
-    },
-    {
-        "ownerUsername": "katpea",
-        "owner_id": "*****",
-        "gameTitle": "Deep Rock Galactic",
-        "game_id": "*****",
-        "licenseID": "drg-key-44770033",
-        "hoursPlayed": 77.7,
-        "spaceRequiredGB": 3.5,
-        "isInstalled": true,
-        "datePurchased": "2022-09-09"
-    }
 ]
-
