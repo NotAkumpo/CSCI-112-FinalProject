@@ -7,7 +7,7 @@
         "isRecommended": false,
         "reviewDescription": "DICE really dropped the ball here. The maps feel empty and the specialist system ruins the class identity Battlefield is known for. Even after updates, it just doesn't feel right.",
         "reviewVisibility": "Public",
-        "datePosted": "2025-08-14",
+        "datePosted": "2025-11-25",
         "userPlaytimeHours": 12.5
     },
     {
@@ -18,8 +18,8 @@
         "isRecommended": true,
         "reviewDescription": "Chaotic fun! The destruction mechanics are insane. Playing with friends in Thailand servers is smooth, but solo queue can be frustrating.",
         "reviewVisibility": "Public",
-        "datePosted": "2025-09-20",
-        "userPlaytimeHours": 64
+        "datePosted": "2025-12-20",
+        "userPlaytimeHours": 64.2
     },
     {
         "gameTitle": "Fallout 4",
@@ -29,8 +29,8 @@
         "isRecommended": true,
         "reviewDescription": "The base game is okay, but the modding community carries this title. Settlement building is addictive once you get the hang of it.",
         "reviewVisibility": "Public",
-        "datePosted": "2025-01-15",
-        "userPlaytimeHours": 240
+        "datePosted": "2025-10-20",
+        "userPlaytimeHours": 240.5
     },
     {
         "gameTitle": "Hearts of Iron IV",
@@ -40,8 +40,8 @@
         "isRecommended": true,
         "reviewDescription": "Steep learning curve but incredibly rewarding. I've spent 500 hours just trying to conquer Asia as a minor nation.",
         "reviewVisibility": "Public",
-        "datePosted": "2025-03-10",
-        "userPlaytimeHours": 512
+        "datePosted": "2025-07-10",
+        "userPlaytimeHours": 512.9
     },
     {
         "gameTitle": "Marvel Rivals",
@@ -52,7 +52,7 @@
         "reviewDescription": "NetEase needs to fix the balancing. Some heroes are instant wins while others are useless. Not worth the grind in its current state.",
         "reviewVisibility": "Public",
         "datePosted": "2025-11-05",
-        "userPlaytimeHours": 8
+        "userPlaytimeHours": 8.1
     },
     {
         "gameTitle": "Project Zomboid",
@@ -63,7 +63,7 @@
         "reviewDescription": "This is how you died. Best zombie survival simulator ever made. I died because I ate burnt toast. 10/10.",
         "reviewVisibility": "Public",
         "datePosted": "2025-06-22",
-        "userPlaytimeHours": 150
+        "userPlaytimeHours": 150.3
     },
     {
         "gameTitle": "Deep Rock Galactic",
@@ -74,18 +74,18 @@
         "reviewDescription": "The grind is too repetitive for me. I wanted to like the dwarves, but the mission variety just isn't there after the first 10 hours.",
         "reviewVisibility": "Public",
         "datePosted": "2025-02-18",
-        "userPlaytimeHours": 13
+        "userPlaytimeHours": 13.0
     },
     {
         "gameTitle": "NARAKA: BLADEPOINT",
         "game_id": "*****",
-        "authorUsername": "rayjoh",
+        "authorUsername": "ronwri",
         "author_id": "*****",
         "isRecommended": true,
         "reviewDescription": "Combat is fluid and fast. The grappling hook mechanics add so much verticality to the fights. Ping is great in Singapore region.",
         "reviewVisibility": "Public",
-        "datePosted": "2025-07-07",
-        "userPlaytimeHours": 89
+        "datePosted": "2025-11-07",
+        "userPlaytimeHours": 45.6
     },
     {
         "gameTitle": "Path of Exile",
@@ -96,7 +96,7 @@
         "reviewDescription": "Too complex for a casual player. The skill tree gives me a headache and the trading system is archaic.",
         "reviewVisibility": "Public",
         "datePosted": "2025-10-12",
-        "userPlaytimeHours": 4
+        "userPlaytimeHours": 4.2
     },
     {
         "gameTitle": "Hogwarts Legacy",
@@ -107,7 +107,7 @@
         "reviewDescription": "Beautiful world, boring gameplay. Once you explore the castle, the open world feels generic and repetitive.",
         "reviewVisibility": "Public",
         "datePosted": "2025-04-30",
-        "userPlaytimeHours": 25
+        "userPlaytimeHours": 25.6
     },
     {
         "gameTitle": "People Playground",
@@ -118,7 +118,7 @@
         "reviewDescription": "It's just a gore sandbox. Gets boring after you've blown up a ragdoll for the 50th time.",
         "reviewVisibility": "Public",
         "datePosted": "2025-01-05",
-        "userPlaytimeHours": 2
+        "userPlaytimeHours": 2.1
     },
     {
         "gameTitle": "Sid Meier’s Civilization® VI",
@@ -129,7 +129,7 @@
         "reviewDescription": "Just one more turn... and suddenly it's 4 AM. playing as the Philippines mod adds nice flavor.",
         "reviewVisibility": "Public",
         "datePosted": "2025-11-20",
-        "userPlaytimeHours": 340
+        "userPlaytimeHours": 340.9
     },
     {
         "gameTitle": "7 Days to Die",
@@ -140,7 +140,7 @@
         "reviewDescription": "Janky as hell but incredibly fun with friends. Building a base to survive the horde night is a rush.",
         "reviewVisibility": "Public",
         "datePosted": "2025-08-08",
-        "userPlaytimeHours": 99
+        "userPlaytimeHours": 99.5
     },
     {
         "gameTitle": "VRChat",
@@ -151,7 +151,7 @@
         "reviewDescription": "I don't even have a VR headset and I've met some of my best friends here. The community creates amazing worlds.",
         "reviewVisibility": "Public",
         "datePosted": "2025-09-15",
-        "userPlaytimeHours": 1200
+        "userPlaytimeHours": 1200.2
     },
     {
         "gameTitle": "No Mans Sky",
@@ -162,7 +162,7 @@
         "reviewDescription": "Wide as an ocean, deep as a puddle. Procedural generation makes everything look the same after a while.",
         "reviewVisibility": "Public",
         "datePosted": "2025-05-22",
-        "userPlaytimeHours": 18
+        "userPlaytimeHours": 18.4
     },
     {
         "gameTitle": "Sekiro™: Shadows Die Twice - GOTY Edition",
@@ -173,7 +173,7 @@
         "reviewDescription": "Hesitation is defeat. Best combat system FromSoftware has ever made. Hard, but fair.",
         "reviewVisibility": "Public",
         "datePosted": "2025-12-01",
-        "userPlaytimeHours": 75
+        "userPlaytimeHours": 75.0
     },
     {
         "gameTitle": "Undertale",
@@ -184,7 +184,7 @@
         "reviewDescription": "A masterpiece. The music, the story, the characters—everything is perfect. Stay filled with determination!",
         "reviewVisibility": "Public",
         "datePosted": "2025-02-14",
-        "userPlaytimeHours": 10
+        "userPlaytimeHours": 10.5
     },
     {
         "gameTitle": "Hades",
@@ -195,7 +195,7 @@
         "reviewDescription": "Too much button mashing for my taste. My hands hurt after an hour of playing this.",
         "reviewVisibility": "Public",
         "datePosted": "2025-07-19",
-        "userPlaytimeHours": 5
+        "userPlaytimeHours": 5.2
     },
     {
         "gameTitle": "Vampire Survivors",
@@ -206,7 +206,7 @@
         "reviewDescription": "Cheap price for hundreds of hours of dopamine hits. It runs great on my laptop too.",
         "reviewVisibility": "Public",
         "datePosted": "2025-10-31",
-        "userPlaytimeHours": 80
+        "userPlaytimeHours": 80.1
     },
     {
         "gameTitle": "DARK SOULS™ III",
@@ -217,7 +217,7 @@
         "reviewDescription": "The atmosphere in this game is unmatched. The boss fights are epic, though the swamp area is annoying.",
         "reviewVisibility": "Public",
         "datePosted": "2025-06-05",
-        "userPlaytimeHours": 110
+        "userPlaytimeHours": 110.8
     },
     {
         "gameTitle": "New World: Aeternum",
@@ -228,7 +228,7 @@
         "reviewDescription": "Amazon needs to fix the economy. Crafting feels useless and the quests are just fetch quests.",
         "reviewVisibility": "Public",
         "datePosted": "2025-03-28",
-        "userPlaytimeHours": 45
+        "userPlaytimeHours": 45.0
     },
     {
         "gameTitle": "Battlefield™ 2042",
@@ -239,7 +239,7 @@
         "reviewDescription": "Still buggy in 2025? Come on DICE. The hit registration is awful on Asian servers.",
         "reviewVisibility": "Public",
         "datePosted": "2025-09-02",
-        "userPlaytimeHours": 20
+        "userPlaytimeHours": 20.2
     },
     {
         "gameTitle": "THE FINALS",
@@ -250,7 +250,7 @@
         "reviewDescription": "Best FPS out right now. The movement speed and strategy required make every match feel unique.",
         "reviewVisibility": "Public",
         "datePosted": "2025-11-15",
-        "userPlaytimeHours": 150
+        "userPlaytimeHours": 150.9
     },
     {
         "gameTitle": "Fallout 4",
@@ -261,7 +261,7 @@
         "reviewDescription": "Story is weak compared to New Vegas. The dialogue options are too limited—basically just Yes, No, Sarcastic, Later.",
         "reviewVisibility": "Public",
         "datePosted": "2025-04-12",
-        "userPlaytimeHours": 60
+        "userPlaytimeHours": 60.5
     },
     {
         "gameTitle": "Marvel Rivals",
@@ -272,7 +272,7 @@
         "reviewDescription": "Feels like an Overwatch clone but with worse optimization. FPS drops constantly.",
         "reviewVisibility": "Public",
         "datePosted": "2025-10-25",
-        "userPlaytimeHours": 6
+        "userPlaytimeHours": 6.0
     },
     {
         "gameTitle": "Project Zomboid",
@@ -283,7 +283,7 @@
         "reviewDescription": "Hardcore survival at its finest. Playing multiplayer with friends in Malaysia is a blast.",
         "reviewVisibility": "Public",
         "datePosted": "2025-01-20",
-        "userPlaytimeHours": 300
+        "userPlaytimeHours": 300.2
     },
     {
         "gameTitle": "Deep Rock Galactic",
@@ -294,18 +294,18 @@
         "reviewDescription": "The community is toxic. Got kicked from a lobby just for being a new player.",
         "reviewVisibility": "Public",
         "datePosted": "2025-08-30",
-        "userPlaytimeHours": 3
+        "userPlaytimeHours": 3.5
     },
     {
         "gameTitle": "NARAKA: BLADEPOINT",
         "game_id": "*****",
-        "authorUsername": "sarmad",
+        "authorUsername": "clapen",
         "author_id": "*****",
         "isRecommended": true,
         "reviewDescription": "Finally a Battle Royale that focuses on melee! The character customization is top tier.",
         "reviewVisibility": "Public",
         "datePosted": "2025-07-22",
-        "userPlaytimeHours": 200
+        "userPlaytimeHours": 18.9
     },
     {
         "gameTitle": "Path of Exile",
@@ -315,18 +315,18 @@
         "isRecommended": false,
         "reviewDescription": "Desync issues make this unplayable on my connection in Myanmar. Rubberbanding everywhere.",
         "reviewVisibility": "Public",
-        "datePosted": "2025-02-05",
-        "userPlaytimeHours": 15
+        "datePosted": "2025-11-05",
+        "userPlaytimeHours": 15.0
     },
     {
         "gameTitle": "Hades",
         "game_id": "*****",
-        "authorUsername": "darjon",
+        "authorUsername": "statuc",
         "author_id": "*****",
         "isRecommended": false,
         "reviewDescription": "Rogue-likes aren't for me. I hate losing progress every time I die. The art is nice though.",
         "reviewVisibility": "Public",
-        "datePosted": "2025-05-18",
-        "userPlaytimeHours": 2
+        "datePosted": "2025-11-18",
+        "userPlaytimeHours": 32.8
     }
 ]
