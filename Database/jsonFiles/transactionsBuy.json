@@ -1,0 +1,602 @@
+[
+    {
+        "customerUsername" : "statuc",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025,11,19),
+        "isRefund" : false,
+        "subtotal" : 3926.3913475898,
+        "lineItems" : [
+            {
+                "gameTitle" : "Battlefield™ 2042",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "THE FINALS",
+                "game_id" : "*****",
+                "purchasePricePeso" : 551.1615809490753,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Fallout 4",
+                "game_id" : "*****",
+                "purchasePricePeso" : 3375.2297666407667,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "sabcol",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025,12,10),
+        "isRefund" : false,
+        "subtotal" : 551.1615809490753,
+        "lineItems" : [
+            {
+                "gameTitle" : "Battlefield™ 2042",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "THE FINALS",
+                "game_id" : "*****",
+                "purchasePricePeso" : 551.1615809490753,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Hearts of Iron IV",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "ronwri",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025,10,6),
+        "isRefund" : false,
+        "subtotal" : 16899.8578916273,
+        "lineItems" : [
+            {
+                "gameTitle" : "NARAKA: BLADEPOINT",
+                "game_id" : "*****",
+                "purchasePricePeso" : 540.6875814837028,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Fallout 4",
+                "game_id" : "*****",
+                "purchasePricePeso" : 3375.2297666407667,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Path of Exile",
+                "game_id" : "*****",
+                "purchasePricePeso" : 12983.9405435028,
+                "isDiscounted" : false
+            }
+        ]
+    },
+    {
+        "customerUsername" : "bobpar",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025,6, 6),
+        "isRefund" : false,
+        "subtotal" : 790.4231053683,
+        "lineItems" : [
+            {
+                "gameTitle" : "Marvel Rivals",
+                "game_id" : "*****",
+                "purchasePricePeso" : 249.735523884585,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Hearts of Iron IV",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "NARAKA: BLADEPOINT",
+                "game_id" : "*****",
+                "purchasePricePeso" : 540.6875814837028,
+                "isDiscounted" : false
+            }
+        ]
+    },
+    {
+        "customerUsername" : "hanols",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025,1, 15),
+        "isRefund" : false,
+        "subtotal" : 249.735523884585,
+        "lineItems" : [
+            {
+                "gameTitle" : "Marvel Rivals",
+                "game_id" : "*****",
+                "purchasePricePeso" : 249.735523884585,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Sid Meier’s Civilization® VI",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "7 Days to Die",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : false
+            }
+        ]
+    },
+    {
+        "customerUsername" : "liswea",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2022,3, 14),
+        "isRefund" : false,
+        "subtotal" : 11097.891158318376,
+        "lineItems" : [
+            {
+                "gameTitle" : "No Mans Sky",
+                "game_id" : "*****",
+                "purchasePricePeso" : 11097.891158318376,
+                "isDiscounted" : false
+            },
+            {
+                "gameTitle" : "Project Zomboid",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "kailam",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2021,9,9),
+        "isRefund" : false,
+        "subtotal" : 1309.099902308662,
+        "lineItems" : [
+            {
+                "gameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Deep Rock Galactic",
+                "game_id" : "*****",
+                "purchasePricePeso" : 1309.099902308662,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "statuc",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025,10,12),
+        "isRefund" : false,
+        "subtotal" : 9400.801056371067,
+        "lineItems" : [
+            {
+                "gameTitle" : "Hades",
+                "game_id" : "*****",
+                "purchasePricePeso" : 9400.801056371067,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Undertale",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "rayjoh",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2022, 1, 5),
+        "isRefund" : true,
+        "subtotal" : 540.6875814837028,
+        "lineItems" : [
+            {
+                "gameTitle" : "NARAKA: BLADEPOINT",
+                "game_id" : "*****",
+                "purchasePricePeso" : 540.6875814837028,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "eridaw",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2020,8,20),
+        "isRefund" : false,
+        "subtotal" : 14293.04044581146,
+        "lineItems" : [
+            {
+                "gameTitle" : "Path of Exile",
+                "game_id" : "*****",
+                "purchasePricePeso" : 12983.9405435028,
+                "isDiscounted" : false
+            },
+            {
+                "gameTitle" : "Deep Rock Galactic",
+                "game_id" : "*****",
+                "purchasePricePeso" : 1309.099902308662,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "samgon",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2023,2,10),
+        "isRefund" : false,
+        "subtotal" : 2822.769455639357,
+        "lineItems" : [
+            {
+                "gameTitle" : "Hogwarts Legacy",
+                "game_id" : "*****",
+                "purchasePricePeso" : 2822.769455639357,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Sid Meier’s Civilization® VI",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "nannel",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2021,5,5),
+        "isRefund" : false,
+        "subtotal" : 0,
+        "lineItems" : [
+            {
+                "gameTitle" : "People Playground",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "New World: Aeternum",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "chrmit",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2017,12,25),
+        "isRefund" : false,
+        "subtotal" : 2822.769455639357,
+        "lineItems" : [
+            {
+                "gameTitle" : "Hogwarts Legacy",
+                "game_id" : "*****",
+                "purchasePricePeso" : 2822.769455639357,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Sid Meier’s Civilization® VI",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "clapen",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2019,10,11),
+        "isRefund" : false,
+        "subtotal" : 540.6875814837028,
+        "lineItems" : [
+            {
+                "gameTitle" : "NARAKA: BLADEPOINT",
+                "game_id" : "*****",
+                "purchasePricePeso" : 540.6875814837028,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "7 Days to Die",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "alerom",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2020,3,20),
+        "isRefund" : false,
+        "subtotal" : 92.0967277271454,
+        "lineItems" : [
+            {
+                "gameTitle" : "VRChat",
+                "game_id" : "*****",
+                "purchasePricePeso" : 92.0967277271454,
+                "isDiscounted" : true
+            },
+            {
+                "gameTitle" : "Sid Meier’s Civilization® VI",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            },
+        ]
+    },
+    {
+        "customerUsername" : "paubre",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2016, 8, 12),
+        "isRefund" : false,
+        "subtotal" : 11097.891158318376,
+        "lineItems" : [
+            {
+                "gameTitle" : "No Mans Sky",
+                "game_id" : "*****",
+                "purchasePricePeso" : 11097.891158318376,
+                "isDiscounted" : false
+            }
+        ]
+    },
+    {
+        "customerUsername" : "karhow",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2020, 11, 28),
+        "isRefund" : false,
+        "subtotal" : 0,
+        "lineItems" : [
+            {
+                "gameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "jesfle",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2016,1,15),
+        "isRefund" : false,
+        "subtotal" : 0,
+        "lineItems" : [
+            {
+                "gameTitle" : "Undertale",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "walwal",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2021, 6, 20),
+        "isRefund" : false,
+        "subtotal" : 9400.801056371067,
+        "lineItems" : [
+            {
+                "gameTitle" : "Hades",
+                "game_id" : "*****",
+                "purchasePricePeso" : 9400.801056371067,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "paujoh",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025,10,17),
+        "isRefund" : false,
+        "subtotal" : 5280.896863946048,
+        "lineItems" : [
+            {
+                "gameTitle" : "Vampire Survivors",
+                "game_id" : "*****",
+                "purchasePricePeso" : 5280.896863946048,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "whimur",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2017, 4, 15),
+        "isRefund" : false,
+        "subtotal" : 0,
+        "lineItems" : [
+            {
+                "gameTitle" : "DARK SOULS™ III",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "rachic",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2021, 9, 28),
+        "isRefund" : false,
+        "subtotal" : 0,
+        "lineItems" : [
+            {
+                "gameTitle" : "New World: Aeternum",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "alerya",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2022, 12, 25),
+        "isRefund" : false,
+        "subtotal" : 0,
+        "lineItems" : [
+            {
+                "gameTitle" : "Battlefield™ 2042",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "pauest",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2024, 1, 1),
+        "isRefund" : false,
+        "subtotal" : 551.1615809490753,
+        "lineItems" : [
+            {
+                "gameTitle" : "THE FINALS",
+                "game_id" : "*****",
+                "purchasePricePeso" : 551.1615809490753,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "alawil",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2019, 2, 14),
+        "isRefund" : false,
+        "subtotal" : 3375.2297666407667,
+        "lineItems" : [
+            {
+                "gameTitle" : "Fallout 4",
+                "game_id" : "*****",
+                "purchasePricePeso" : 3375.2297666407667,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "benmor",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025, 2, 20),
+        "isRefund" : false,
+        "subtotal" : 249.735523884585,
+        "lineItems" : [
+            {
+                "gameTitle" : "Marvel Rivals",
+                "game_id" : "*****",
+                "purchasePricePeso" : 249.735523884585,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "petgil",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2021, 8, 15),
+        "isRefund" : false,
+        "subtotal" : 0,
+        "lineItems" : [
+            {
+                "gameTitle" : "Project Zomboid",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "donspe",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2023, 5, 5),
+        "isRefund" : false,
+        "subtotal" : 1309.099902308662,
+        "lineItems" : [
+            {
+                "gameTitle" : "Deep Rock Galactic",
+                "game_id" : "*****",
+                "purchasePricePeso" : 1309.099902308662,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "aleell",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025,10,14),
+        "isRefund" : false,
+        "subtotal" : 11097.891158318376,
+        "lineItems" : [
+            {
+                "gameTitle" : "Path of Exile",
+                "game_id" : "*****",
+                "purchasePricePeso" : 11097.891158318376,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "darjon",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025, 4, 22),
+        "isRefund" : false,
+        "subtotal" : 9400.801056371067,
+        "lineItems" : [
+            {
+                "gameTitle" : "Path of Exile",
+                "game_id" : "*****",
+                "purchasePricePeso" : 9400.801056371067,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "ricgoo",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2020, 5, 9),
+        "isRefund" : false,
+        "subtotal" : 0,
+        "lineItems" : [
+            {
+                "gameTitle" : "Hearts of Iron IV",
+                "game_id" : "*****",
+                "purchasePricePeso" : 0,
+                "isDiscounted" : true
+            }
+        ]
+    },
+    {
+        "customerUsername" : "connor",
+        "customer_id" : "*****",
+        "transactionDate" : datetime(2025, 3, 15),
+        "isRefund" : false,
+        "subtotal" : 2822.769455639357,
+        "lineItems" : [
+            {
+                "gameTitle" : "Hogwarts Legacy",
+                "game_id" : "*****",
+                "purchasePricePeso" : 2822.769455639357,
+                "isDiscounted" : false
+            }
+        ]
+    },
+]

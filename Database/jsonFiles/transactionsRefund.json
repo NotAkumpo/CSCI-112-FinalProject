@@ -1,0 +1,102 @@
+[
+    {
+        "customerUsername" : "rayjoh",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "NARAKA: BLADEPOINT",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,23),
+        "isRefund" : true,
+        "balanceRefunded" : 540.6875814837028
+    },
+    {
+        "customerUsername" : "rayjoh",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,23),
+        "isRefund" : true,
+        "balanceRefunded" : 0
+    },
+    {
+        "customerUsername" : "chrmit",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "Hogwarts Legacy",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,26),
+        "isRefund" : true,
+        "balanceRefunded" : 2822.769455639357
+    },
+    {
+        "customerUsername" : "clapen",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "NARAKA: BLADEPOINT",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,23),
+        "isRefund" : true,
+        "balanceRefunded" : 540.6875814837028
+    },
+    {
+        "customerUsername" : "karhow",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "Sekiro™: Shadows Die Twice - GOTY Edition",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,23),
+        "isRefund" : true,
+        "balanceRefunded" : 540.6875814837028
+    },
+    {
+        "customerUsername" : "hanols",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "Marvel Rivals",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,26),
+        "isRefund" : true,
+        "balanceRefunded" : 540.6875814837028
+    },
+    {
+        "customerUsername" : "samgon",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "Hogwarts LegacyT",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,29),
+        "isRefund" : true,
+        "balanceRefunded" : 2822.769455639357 
+    },
+    {
+        "customerUsername" : "nannel",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "People Playground",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,23),
+        "isRefund" : true,
+        "balanceRefunded" : 0
+    },
+    {
+        "customerUsername" : "statuc",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "THE FINALS",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,30),
+        "isRefund" : true,
+        "balanceRefunded" : 551.1615809490753
+    },
+    {
+        "customerUsername" : "statuc",
+        "customer_id" : "*****",
+        "refundedGameTitle" : "Fallout 4",
+        "refundedGameStore_id" : "*****",
+        "refundedGameLibrary_id" : "*****",
+        "transactionDate" : datetime(2025,11,25),
+        "isRefund" : true,
+        "balanceRefunded" : 3375.2297666407667
+    }
+]
