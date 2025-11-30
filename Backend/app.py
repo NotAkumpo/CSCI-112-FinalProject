@@ -404,16 +404,18 @@ def api_get_user_library():
 
         # Fetch all games owned by current user
         owned_games = list(db['ownedGameInfo'].find({
-            'owner_id': str(current_user['_id'])
+            'ownerUsername': current_user['username']
         }))
 
         # Enrich each owned game with developer info from store database
         for game in owned_games:
             game['_id'] = str(game['_id'])
-            # Look up developer name from store game info
+            # Look up developer name and ID from store game info
             store_game = db['storeGameInfo'].find_one({'gameTitle': game['gameTitle']})
             if store_game:
                 game['developer'] = store_game.get('developer', 'Unknown Developer')
+                # Ensure game_id is set to the store game's _id for navigation
+                game['game_id'] = str(store_game['_id'])
             else:
                 game['developer'] = 'Unknown Developer'
 
@@ -478,7 +480,7 @@ def api_purchase_game():
 
         # Check if user already owns this game (prevent duplicate purchases)
         existing = db['ownedGameInfo'].find_one({
-            'owner_id': str(current_user['_id']),
+            'ownerUsername': current_user['username'],
             'gameTitle': game['gameTitle']
         })
         if existing:
@@ -564,7 +566,7 @@ def api_refund_game():
         # Verify owned game exists and belongs to current user
         owned_game = db['ownedGameInfo'].find_one({
             '_id': ObjectId(owned_game_id),
-            'owner_id': str(current_user['_id'])
+            'ownerUsername': current_user['username']
         })
 
         if not owned_game:
@@ -680,6 +682,44 @@ def api_get_wallet():
             'success': True,
             'balance': balance
         })
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/games/<game_id>/reviews', methods=['GET'])
+def api_get_game_reviews(game_id):
+    """
+    API endpoint to retrieve reviews for a specific game by ID.
+    Returns reviews mapped to frontend-expected field names.
+    """
+    try:
+        # Validate that game_id is a valid MongoDB ObjectId format
+        if not ObjectId.is_valid(game_id):
+            return jsonify({'error': 'Invalid game ID format'}), 400
+
+        # Query specific game to get its title
+        game = db['storeGameInfo'].find_one({'_id': ObjectId(game_id)})
+        if not game:
+            return jsonify({'error': 'Game not found'}), 404
+
+        # Fetch reviews for this game by gameTitle
+        reviews = list(db['gameReviews'].find({
+            'gameTitle': game.get('gameTitle')
+        }).limit(50))
+
+        # Map database fields to frontend-expected field names
+        mapped_reviews = []
+        for review in reviews:
+            mapped_reviews.append({
+                'author': review.get('authorUsername', 'Anonymous'),
+                'playtime': review.get('userPlaytimeHours', 0),
+                'date': review.get('datePosted'),
+                'recommended': review.get('isRecommended', False),
+                'rating': 10 if review.get('isRecommended', False) else 5,  # No rating field in schema, derive from recommendation
+                'content': review.get('reviewDescription', '')
+            })
+
+        return jsonify({'reviews': mapped_reviews, 'count': len(mapped_reviews)})
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
