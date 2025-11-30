@@ -492,13 +492,6 @@
             <!-- Meta Information -->
             <div class="game-meta">
                 <div class="meta-item">
-                    <span class="meta-label">Rating</span>
-                    <div class="rating-display">
-                        <span class="stars-large" id="gameRating">★90</span>
-                        <span class="rating-text" id="gameVerdict">Very Positive</span>
-                    </div>
-                </div>
-                <div class="meta-item">
                     <span class="meta-label">Release Date</span>
                     <span class="meta-value" id="releaseDate">2024-01-01</span>
                 </div>
@@ -682,8 +675,6 @@
         if (!gameData) return;
         document.getElementById('gameTitle').textContent = gameData.gameTitle;
         document.getElementById('gameDeveloper').textContent = gameData.developer;
-        document.getElementById('gameRating').textContent = `★${gameData.averageRating}`;
-        document.getElementById('gameVerdict').textContent = gameData.reviewVerdict;
         document.getElementById('releaseDate').textContent = new Date(gameData.releaseDate).toLocaleDateString();
         document.getElementById('gameDescription').textContent = gameData.description;
 

@@ -9,9 +9,7 @@ let filteredGames = [];
 
 // DOM element references for the filter controls and game display
 const searchInput = document.getElementById('searchInput');
-const minRatingSlider = document.getElementById('minRating');
 const maxPriceSlider = document.getElementById('maxPrice');
-const ratingValue = document.getElementById('ratingValue');
 const priceValue = document.getElementById('priceValue');
 const resetBtn = document.getElementById('resetBtn');
 const gamesList = document.getElementById('gamesList');
@@ -23,11 +21,6 @@ const gameDetails = document.getElementById('gameDetails');
 
 // Attach event listeners for filter interactions - re-filters games on input
 searchInput.addEventListener('input', filterGames);
-minRatingSlider.addEventListener('input', () => {
-    // Update displayed rating value as user moves slider
-    ratingValue.textContent = minRatingSlider.value;
-    filterGames();
-});
 maxPriceSlider.addEventListener('input', () => {
     // Update displayed price value as user moves slider
     priceValue.textContent = maxPriceSlider.value;
@@ -69,22 +62,19 @@ async function loadGames() {
 
 /**
  * Filter games based on search input and slider values
- * Searches game titles and developer names, filters by minimum rating and maximum price
+ * Searches game titles and developer names, filters by maximum price
  */
 function filterGames() {
     const search = searchInput.value.toLowerCase();
-    const minRating = parseInt(minRatingSlider.value);
     const maxPrice = parseInt(maxPriceSlider.value);
 
-    // Filter games matching search criteria and price/rating constraints
+    // Filter games matching search criteria and price constraints
     filteredGames = allGames.filter(game => {
         const title = (game.gameTitle || '').toLowerCase();
         const developer = (game.developer || '').toLowerCase();
-        const rating = parseFloat(game.averageRating || 0);
         const price = parseFloat(game.currentPricePeso || 0);
 
         return (title.includes(search) || developer.includes(search)) &&
-               rating >= minRating &&
                price <= maxPrice;
     });
 
@@ -119,9 +109,6 @@ function renderGames() {
  * Includes game title, developer, rating, price, badges, and description preview
  */
 function createGameCard(game) {
-    const rating = parseFloat(game.averageRating || 0);
-    // Convert numeric rating to star display (divide by 20 for 5-star scale)
-    const stars = rating > 0 ? '⭐'.repeat(Math.floor(rating / 20)) : 'No ratings';
     // Show only first 3 categories to keep card compact
     const categories = (game.categories || []).slice(0, 3).map(cat => `<span class="category-tag">${cat}</span>`).join('');
 
@@ -141,11 +128,6 @@ function createGameCard(game) {
             </div>
             <div class="game-card-body">
                 <p class="game-developer">by ${game.developer || 'Unknown'}</p>
-
-                <div class="game-rating">
-                    <span class="rating-stars">${stars}</span>
-                    <span class="rating-value">${rating}/100</span>
-                </div>
 
                 <div class="game-price">
                     ₱${parseFloat(game.currentPricePeso || 0).toFixed(2)}
@@ -172,8 +154,6 @@ function createGameCard(game) {
  * Shows all game information including rating, price, categories, and system requirements
  */
 function showGameDetails(game) {
-    const rating = parseFloat(game.averageRating || 0);
-    const stars = rating > 0 ? '⭐'.repeat(Math.floor(rating / 20)) : 'No ratings';
     // Parse and format release date for display
     const releaseDate = new Date(game.releaseDate).toLocaleDateString();
     // Show all categories in detail view (unlike card which shows only 3)
@@ -192,9 +172,8 @@ function showGameDetails(game) {
         </div>
 
         <div class="detail-section">
-            <h3>Rating & Price</h3>
+            <h3>Price</h3>
             <p>
-                <strong>Rating:</strong> ${stars} ${rating}/100 (${game.reviewVerdict || 'No verdict'})<br>
                 <strong>Price:</strong> ₱${parseFloat(game.currentPricePeso || 0).toFixed(2)}
                 ${game.originalPricePeso && game.originalPricePeso !== game.currentPricePeso ? `<br><strike>₱${parseFloat(game.originalPricePeso).toFixed(2)}</strike>` : ''}
             </p>
@@ -261,11 +240,9 @@ function closeModal() {
 function resetFilters() {
     // Clear search input
     searchInput.value = '';
-    // Reset sliders to default bounds (0-5000 peso range)
-    minRatingSlider.value = 0;
+    // Reset price slider to default bounds (0-5000 peso range)
     maxPriceSlider.value = 5000;
-    // Update displayed values to match slider positions
-    ratingValue.textContent = '0';
+    // Update displayed price value to match slider position
     priceValue.textContent = '5000';
     // Trigger filter to show all games matching default criteria
     filterGames();
