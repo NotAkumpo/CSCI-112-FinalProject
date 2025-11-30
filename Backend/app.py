@@ -231,10 +231,6 @@ def store():
     if not current_user:
         return redirect(url_for('login'))
 
-    # Add wallet balance to template context for display in UI
-    if current_user:
-        current_user['wallet_balance'] = current_user.get('walletBalancePeso', 0)
-
     return render_template('store.html',
                          current_page='store',
                          current_user=current_user)
@@ -250,10 +246,6 @@ def library():
     if not current_user:
         return redirect(url_for('login'))
 
-    # Add wallet balance to template context for display in UI
-    if current_user:
-        current_user['wallet_balance'] = current_user.get('walletBalancePeso', 0)
-
     return render_template('library.html',
                          current_page='library',
                          current_user=current_user)
@@ -268,10 +260,6 @@ def game_detail(game_id):
     # Redirect to login if not authenticated
     if not current_user:
         return redirect(url_for('login'))
-
-    # Add wallet balance to template context for display in UI
-    if current_user:
-        current_user['wallet_balance'] = current_user.get('walletBalancePeso', 0)
 
     try:
         # Validate that game_id is a valid MongoDB ObjectId
@@ -440,10 +428,10 @@ def api_get_user_profile():
         user_data = {
             'id': str(current_user['_id']),
             'username': current_user.get('username'),
-            'email': current_user.get('emailAddress'),
-            'firstName': current_user.get('customerFirstName'),
-            'lastName': current_user.get('customerLastName'),
-            'walletBalance': current_user.get('walletBalancePeso', 0),
+            'emailAddress': current_user.get('emailAddress'),
+            'customerFirstName': current_user.get('customerFirstName'),
+            'customerLastName': current_user.get('customerLastName'),
+            'walletBalancePeso': current_user.get('walletBalancePeso', 0),
             'country': current_user.get('country'),
             'age': current_user.get('age')
         }
@@ -503,7 +491,7 @@ def api_purchase_game():
             # Generate unique license ID using SHA-256 hash
             'licenseID': hashlib.sha256(f"{current_user['_id']}{game_id}{datetime.now()}".encode()).hexdigest(),
             'hoursPlayed': 0,
-            'spaceRequiredGB': game.get('spaceRequiredGB', 0),
+            'spaceRequiredGB': 0,  # Field not in storeGameInfo schema, default to 0
             'isInstalled': False,
             'datePurchased': datetime.now()
         }
@@ -711,15 +699,126 @@ def api_get_game_reviews(game_id):
         mapped_reviews = []
         for review in reviews:
             mapped_reviews.append({
+                'id': str(review.get('_id')),
                 'author': review.get('authorUsername', 'Anonymous'),
                 'playtime': review.get('userPlaytimeHours', 0),
                 'date': review.get('datePosted'),
                 'recommended': review.get('isRecommended', False),
-                'rating': 10 if review.get('isRecommended', False) else 5,  # No rating field in schema, derive from recommendation
                 'content': review.get('reviewDescription', '')
             })
 
         return jsonify({'reviews': mapped_reviews, 'count': len(mapped_reviews)})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/games/<game_id>/reviews', methods=['POST'])
+def api_submit_review(game_id):
+    """
+    API endpoint to submit a review for a specific game.
+    Validates user owns the game before allowing review submission.
+    Request JSON: {recommended: <bool>, content: <string>}
+    """
+    try:
+        # Verify user is authenticated
+        current_user = get_current_user()
+        if not current_user:
+            return jsonify({'error': 'Not authenticated'}), 401
+
+        # Validate that game_id is a valid MongoDB ObjectId format
+        if not ObjectId.is_valid(game_id):
+            return jsonify({'error': 'Invalid game ID format'}), 400
+
+        # Query specific game
+        game = db['storeGameInfo'].find_one({'_id': ObjectId(game_id)})
+        if not game:
+            return jsonify({'error': 'Game not found'}), 404
+
+        # Check if user owns this game
+        owned_game = db['ownedGameInfo'].find_one({
+            'ownerUsername': current_user['username'],
+            'gameTitle': game.get('gameTitle')
+        })
+        if not owned_game:
+            return jsonify({'error': 'You must own this game to review it'}), 403
+
+        # Check if user already reviewed this game
+        existing_review = db['gameReviews'].find_one({
+            'authorUsername': current_user['username'],
+            'gameTitle': game.get('gameTitle')
+        })
+        if existing_review:
+            return jsonify({'error': 'You have already reviewed this game'}), 400
+
+        # Extract review data from request
+        data = request.get_json()
+        recommended = data.get('recommended')
+        content = data.get('content', '').strip()
+
+        # Validate required fields
+        if recommended is None:
+            return jsonify({'error': 'Recommendation status is required'}), 400
+        if not content:
+            return jsonify({'error': 'Review content is required'}), 400
+        if len(content) < 10:
+            return jsonify({'error': 'Review must be at least 10 characters'}), 400
+
+        # Create review document
+        review = {
+            'gameTitle': game.get('gameTitle'),
+            'game_id': game_id,
+            'authorUsername': current_user['username'],
+            'author_id': str(current_user['_id']),
+            'isRecommended': recommended,
+            'reviewDescription': content,
+            'reviewVisibility': 'Public',
+            'datePosted': datetime.now(),
+            'userPlaytimeHours': owned_game.get('hoursPlayed', 0)
+        }
+
+        # Insert review into database
+        db['gameReviews'].insert_one(review)
+
+        return jsonify({
+            'success': True,
+            'message': 'Review submitted successfully'
+        })
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/api/games/<game_id>/reviews/<review_id>', methods=['DELETE'])
+def api_delete_review(game_id, review_id):
+    """
+    API endpoint to delete a user's own review.
+    Only allows users to delete their own reviews.
+    """
+    try:
+        # Verify user is authenticated
+        current_user = get_current_user()
+        if not current_user:
+            return jsonify({'error': 'Not authenticated'}), 401
+
+        # Validate that review_id is a valid MongoDB ObjectId format
+        if not ObjectId.is_valid(review_id):
+            return jsonify({'error': 'Invalid review ID format'}), 400
+
+        # Find the review
+        review = db['gameReviews'].find_one({'_id': ObjectId(review_id)})
+        if not review:
+            return jsonify({'error': 'Review not found'}), 404
+
+        # Check if the review belongs to the current user
+        if review.get('authorUsername') != current_user['username']:
+            return jsonify({'error': 'You can only delete your own reviews'}), 403
+
+        # Delete the review
+        db['gameReviews'].delete_one({'_id': ObjectId(review_id)})
+
+        return jsonify({
+            'success': True,
+            'message': 'Review deleted successfully'
+        })
 
     except Exception as e:
         return jsonify({'error': str(e)}), 500
@@ -736,5 +835,5 @@ def internal_error(error):
 
 if __name__ == '__main__':
     # Use DEBUG environment variable; defaults to False for security
-    debug_mode = os.environ.get('FLASK_DEBUG', 'False').lower() == 'true'
+    debug_mode = os.environ.get('FLASK_DEBUG', 'True').lower() == 'true'
     app.run(debug=debug_mode, port=8000)

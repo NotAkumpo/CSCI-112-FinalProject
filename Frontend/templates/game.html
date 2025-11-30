@@ -304,18 +304,152 @@
     .review-content {
         color: var(--text-secondary);
         line-height: 1.6;
-        margin-bottom: var(--spacing-md);
     }
 
-    .review-rating {
-        color: var(--accent-warning);
-        margin-bottom: var(--spacing-md);
+    .review-actions {
+        margin-top: var(--spacing-md);
+        display: flex;
+        gap: var(--spacing-sm);
+    }
+
+    .delete-review-btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+        background-color: transparent;
+        color: var(--accent-danger);
+        border: 1px solid var(--accent-danger);
+        border-radius: var(--radius-md);
+        font-size: 0.9rem;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .delete-review-btn:hover {
+        background-color: var(--accent-danger);
+        color: white;
     }
 
     .no-reviews {
         text-align: center;
         padding: var(--spacing-2xl);
         color: var(--text-secondary);
+    }
+
+    .review-form {
+        background-color: var(--card-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-xl);
+        margin-bottom: var(--spacing-2xl);
+    }
+
+    .review-form h3 {
+        color: var(--accent-secondary);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .form-group {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .form-group label {
+        display: block;
+        color: var(--text-primary);
+        font-weight: 600;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .recommendation-buttons {
+        display: flex;
+        gap: var(--spacing-md);
+    }
+
+    .recommendation-btn {
+        flex: 1;
+        padding: var(--spacing-md);
+        border: 2px solid var(--border-color);
+        background-color: var(--secondary-dark);
+        color: var(--text-primary);
+        border-radius: var(--radius-md);
+        cursor: pointer;
+        font-weight: 600;
+        transition: all var(--transition-fast);
+    }
+
+    .recommendation-btn:hover {
+        border-color: var(--accent-secondary);
+    }
+
+    .recommendation-btn.active {
+        background-color: var(--accent-primary);
+        border-color: var(--accent-primary);
+        color: white;
+    }
+
+    .recommendation-btn.recommend.active {
+        background-color: var(--accent-success);
+        border-color: var(--accent-success);
+    }
+
+    .recommendation-btn.not-recommend.active {
+        background-color: var(--accent-danger);
+        border-color: var(--accent-danger);
+    }
+
+    .review-textarea {
+        width: 100%;
+        min-height: 150px;
+        padding: var(--spacing-md);
+        background-color: var(--secondary-dark);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius-md);
+        color: var(--text-primary);
+        font-family: inherit;
+        font-size: 1rem;
+        resize: vertical;
+    }
+
+    .review-textarea:focus {
+        outline: none;
+        border-color: var(--accent-secondary);
+    }
+
+    .submit-review-btn {
+        padding: var(--spacing-md) var(--spacing-xl);
+        background-color: var(--accent-primary);
+        color: white;
+        border: none;
+        border-radius: var(--radius-md);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-fast);
+    }
+
+    .submit-review-btn:hover {
+        background-color: var(--accent-secondary);
+    }
+
+    .submit-review-btn:disabled {
+        background-color: var(--text-secondary);
+        cursor: not-allowed;
+    }
+
+    .review-form-message {
+        padding: var(--spacing-md);
+        border-radius: var(--radius-md);
+        margin-bottom: var(--spacing-md);
+        display: none;
+    }
+
+    .review-form-message.success {
+        background-color: rgba(63, 185, 80, 0.2);
+        color: var(--accent-success);
+        border: 1px solid var(--accent-success);
+    }
+
+    .review-form-message.error {
+        background-color: rgba(237, 66, 69, 0.2);
+        color: var(--accent-danger);
+        border: 1px solid var(--accent-danger);
     }
 
     @media (max-width: 768px) {
@@ -413,6 +547,38 @@
 
     <!-- Reviews Tab -->
     <div id="reviews" class="tab-content">
+        <!-- Review Submission Form -->
+        <div class="review-form" id="reviewForm">
+            <h3>Write a Review</h3>
+            <div class="review-form-message" id="reviewFormMessage"></div>
+            <form id="submitReviewForm" onsubmit="submitReview(event)">
+                <div class="form-group">
+                    <label>Do you recommend this game?</label>
+                    <div class="recommendation-buttons">
+                        <button type="button" class="recommendation-btn recommend" onclick="selectRecommendation(true)">
+                            ✓ Recommended
+                        </button>
+                        <button type="button" class="recommendation-btn not-recommend" onclick="selectRecommendation(false)">
+                            ✗ Not Recommended
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reviewContent">Your Review</label>
+                    <textarea
+                        id="reviewContent"
+                        class="review-textarea"
+                        placeholder="Share your thoughts about this game... (minimum 10 characters)"
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit" class="submit-review-btn" id="submitReviewBtn" disabled>
+                    Submit Review
+                </button>
+            </form>
+        </div>
+
+        <h3 style="color: var(--accent-secondary); margin-bottom: var(--spacing-lg);">Reviews</h3>
         <div class="reviews-container" id="reviewsList">
             <div class="no-reviews">
                 <p>No reviews available yet</p>
@@ -430,7 +596,6 @@
             <p>Supported languages: English, Spanish, French, German, Japanese, Chinese</p>
 
             <h3 style="margin-top: var(--spacing-xl);">Additional Information</h3>
-            <p id="gameSize">Size: Calculating...</p>
             <p>Developer Support: Available on the game's official website</p>
         </div>
     </div>
@@ -440,6 +605,8 @@
     let gameData = null;
     let gameId = null;
     let isGameOwned = false;
+    let selectedRecommendation = null;
+    let hasUserReviewed = false;
 
     // Extract game ID from URL
     function getGameIdFromUrl() {
@@ -481,7 +648,7 @@
                 gameData.reviews = [];
             }
 
-            initGame();
+            await initGame();
         } catch (error) {
             console.error('Error fetching game:', error);
             document.querySelector('.game-header').innerHTML = `
@@ -511,7 +678,7 @@
         }
     }
 
-    function initGame() {
+    async function initGame() {
         if (!gameData) return;
         document.getElementById('gameTitle').textContent = gameData.gameTitle;
         document.getElementById('gameDeveloper').textContent = gameData.developer;
@@ -519,10 +686,9 @@
         document.getElementById('gameVerdict').textContent = gameData.reviewVerdict;
         document.getElementById('releaseDate').textContent = new Date(gameData.releaseDate).toLocaleDateString();
         document.getElementById('gameDescription').textContent = gameData.description;
-        document.getElementById('gameSize').textContent = `Size: ${gameData.spaceRequiredGB || 'N/A'}GB`;
 
-        // Check if user owns this game
-        checkIfGameOwned();
+        // Check if user owns this game and wait for it to complete
+        await checkIfGameOwned();
 
         // Render badges
         const badges = document.getElementById('badges');
@@ -555,12 +721,38 @@
             .map(cat => `<div class="category-badge">${cat}</div>`)
             .join('');
 
-        // Render reviews
-        renderReviews();
+        // Render reviews after ownership check is complete
+        await renderReviews();
     }
 
-    function renderReviews() {
+    async function renderReviews() {
         const reviewsList = document.getElementById('reviewsList');
+        const reviewForm = document.getElementById('reviewForm');
+
+        // Get current username
+        const currentUser = await getCurrentUsername();
+
+        // Check if user already reviewed this game
+        if (gameData.reviews && gameData.reviews.length > 0) {
+            hasUserReviewed = gameData.reviews.some(review => review.author === currentUser);
+        }
+
+        // Debug logging
+        console.log('Review Form Debug:', {
+            isGameOwned,
+            hasUserReviewed,
+            currentUser,
+            reviewCount: gameData.reviews?.length || 0,
+            reviewAuthors: gameData.reviews?.map(r => r.author) || []
+        });
+
+        // Show review form if user owns the game and hasn't reviewed yet
+        if (isGameOwned && !hasUserReviewed) {
+            reviewForm.style.display = 'block';
+        } else {
+            reviewForm.style.display = 'none';
+        }
+
         if (gameData.reviews.length === 0) {
             reviewsList.innerHTML = '<div class="no-reviews"><p>No reviews available yet</p></div>';
             return;
@@ -580,11 +772,163 @@
                             ${review.recommended ? '<div class="verdict-badge">✓ Recommended</div>' : '<div class="verdict-badge">✗ Not Recommended</div>'}
                         </div>
                     </div>
-                    <div class="review-rating">★${review.rating}/10</div>
                     <div class="review-content">${review.content}</div>
+                    ${review.author === currentUser ? `
+                        <div class="review-actions">
+                            <button class="delete-review-btn" onclick="deleteReview('${review.id}')">Delete Review</button>
+                        </div>
+                    ` : ''}
                 </div>
             `)
             .join('');
+    }
+
+    async function getCurrentUsername() {
+        try {
+            const response = await fetch('/api/user/profile');
+            if (response.ok) {
+                const data = await response.json();
+                return data.username;
+            }
+        } catch (error) {
+            console.error('Error fetching username:', error);
+        }
+        return null;
+    }
+
+    function selectRecommendation(recommended) {
+        selectedRecommendation = recommended;
+
+        // Update button styles
+        const recommendBtn = document.querySelector('.recommendation-btn.recommend');
+        const notRecommendBtn = document.querySelector('.recommendation-btn.not-recommend');
+
+        if (recommended) {
+            recommendBtn.classList.add('active');
+            notRecommendBtn.classList.remove('active');
+        } else {
+            notRecommendBtn.classList.add('active');
+            recommendBtn.classList.remove('active');
+        }
+
+        // Enable submit button if content is valid
+        validateReviewForm();
+    }
+
+    function validateReviewForm() {
+        const content = document.getElementById('reviewContent').value.trim();
+        const submitBtn = document.getElementById('submitReviewBtn');
+
+        if (selectedRecommendation !== null && content.length >= 10) {
+            submitBtn.disabled = false;
+        } else {
+            submitBtn.disabled = true;
+        }
+    }
+
+    // Add input listener to review content
+    document.addEventListener('DOMContentLoaded', () => {
+        const reviewContent = document.getElementById('reviewContent');
+        if (reviewContent) {
+            reviewContent.addEventListener('input', validateReviewForm);
+        }
+    });
+
+    async function submitReview(event) {
+        event.preventDefault();
+
+        const content = document.getElementById('reviewContent').value.trim();
+        const submitBtn = document.getElementById('submitReviewBtn');
+        const messageDiv = document.getElementById('reviewFormMessage');
+
+        if (selectedRecommendation === null) {
+            showMessage('Please select whether you recommend this game', 'error');
+            return;
+        }
+
+        if (content.length < 10) {
+            showMessage('Review must be at least 10 characters', 'error');
+            return;
+        }
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Submitting...';
+
+        try {
+            const response = await fetch(`/api/games/${gameId}/reviews`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    recommended: selectedRecommendation,
+                    content: content
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                showMessage('Review submitted successfully!', 'success');
+
+                // Reset form
+                document.getElementById('submitReviewForm').reset();
+                document.querySelectorAll('.recommendation-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                selectedRecommendation = null;
+
+                // Reload reviews
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
+            } else {
+                showMessage(data.error || 'Failed to submit review', 'error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Review';
+            }
+        } catch (error) {
+            console.error('Error submitting review:', error);
+            showMessage('An error occurred. Please try again.', 'error');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit Review';
+        }
+    }
+
+    function showMessage(message, type) {
+        const messageDiv = document.getElementById('reviewFormMessage');
+        messageDiv.textContent = message;
+        messageDiv.className = `review-form-message ${type}`;
+        messageDiv.style.display = 'block';
+
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
+        }, 5000);
+    }
+
+    async function deleteReview(reviewId) {
+        if (!confirm('Are you sure you want to delete your review? This action cannot be undone.')) {
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/games/${gameId}/reviews/${reviewId}`, {
+                method: 'DELETE'
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                alert('Review deleted successfully!');
+                // Reload the page to refresh reviews
+                window.location.reload();
+            } else {
+                alert('Failed to delete review: ' + data.error);
+            }
+        } catch (error) {
+            console.error('Error deleting review:', error);
+            alert('An error occurred while deleting the review');
+        }
     }
 
     function showTab(tabName) {
