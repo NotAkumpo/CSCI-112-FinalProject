@@ -293,6 +293,29 @@ def game_detail(game_id):
 
 # ========================= API ENDPOINTS =========================
 
+@app.route('/api/categories', methods=['GET'])
+def api_get_categories():
+    """
+    API endpoint to retrieve all unique categories from the storeGameInfo collection.
+    Returns a sorted list of category strings.
+    """
+    try:
+        # Flatten all category arrays from storeGameInfo
+        flattened_categories = set()
+        for game in db['storeGameInfo'].find(
+            {'gameTitle': {'$ne': 'String'}, 'categories': {'$exists': True}},
+            {'categories': 1}
+        ):
+            if isinstance(game.get('categories'), list):
+                flattened_categories.update(game['categories'])
+
+        # Sort and return as list
+        sorted_categories = sorted(list(flattened_categories))
+        return jsonify({'categories': sorted_categories})
+
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/api/games', methods=['GET'])
 def api_get_games():
     """

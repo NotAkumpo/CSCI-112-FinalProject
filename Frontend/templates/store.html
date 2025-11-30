@@ -173,22 +173,6 @@
         font-weight: 600;
     }
 
-    .game-card-rating {
-        display: flex;
-        align-items: center;
-        gap: var(--spacing-xs);
-        margin-bottom: var(--spacing-sm);
-        font-size: 0.85rem;
-    }
-
-    .stars {
-        color: var(--accent-warning);
-    }
-
-    .rating-text {
-        color: var(--text-secondary);
-        font-size: 0.75rem;
-    }
 
     .game-card-footer {
         padding-top: var(--spacing-md);
@@ -468,12 +452,7 @@
         <div class="filter-group">
             <select id="categoryFilter" onchange="filterGames()">
                 <option value="">All Categories</option>
-                <option value="Action">Action</option>
-                <option value="Adventure">Adventure</option>
-                <option value="Strategy">Strategy</option>
-                <option value="RPG">RPG</option>
-                <option value="Sports">Sports</option>
-                <option value="Puzzle">Puzzle</option>
+                <!-- Categories will be loaded dynamically -->
             </select>
 
             <select id="priceFilter" onchange="filterGames()">
@@ -485,9 +464,9 @@
             </select>
 
             <select id="sortBy" onchange="sortGames()">
-                <option value="popular">Most Popular</option>
-                <option value="rating">Highest Rated</option>
                 <option value="newest">Newest</option>
+                <option value="alphabetic-asc">Alphabetic: A-Z</option>
+                <option value="alphabetic-desc">Alphabetic: Z-A</option>
                 <option value="price-asc">Price: Low to High</option>
                 <option value="price-desc">Price: High to Low</option>
             </select>
@@ -543,6 +522,33 @@
     const itemsPerPage = 12;
     let filteredGames = [];
     let ownedGameTitles = [];
+
+    // Fetch and populate categories from the database
+    async function loadCategories() {
+        try {
+            const response = await fetch('/api/categories');
+            if (response.ok) {
+                const data = await response.json();
+                const categorySelect = document.getElementById('categoryFilter');
+                const categories = data.categories || [];
+
+                // Clear existing options except the first one
+                while (categorySelect.options.length > 1) {
+                    categorySelect.remove(1);
+                }
+
+                // Add category options dynamically
+                categories.forEach(category => {
+                    const option = document.createElement('option');
+                    option.value = category;
+                    option.textContent = category;
+                    categorySelect.appendChild(option);
+                });
+            }
+        } catch (error) {
+            console.error('Error loading categories:', error);
+        }
+    }
 
     // Fetch user's owned games
     async function fetchOwnedGames() {
@@ -611,10 +617,6 @@
                     <p class="game-card-developer">${game.developer}</p>
                     <div class="game-card-categories">
                         ${(game.categories || []).slice(0, 2).map(cat => `<span class="category-tag">${cat}</span>`).join('')}
-                    </div>
-                    <div class="game-card-rating">
-                        <span class="stars">★${game.averageRating}</span>
-                        <span class="rating-text">${game.reviewVerdict}</span>
                     </div>
                 </div>
                 <div class="game-card-footer">
@@ -692,11 +694,14 @@
         const sorted = [...filteredGames];
 
         switch(sortBy) {
-            case 'rating':
-                sorted.sort((a, b) => b.averageRating - a.averageRating);
-                break;
             case 'newest':
                 sorted.sort((a, b) => new Date(b.releaseDate) - new Date(a.releaseDate));
+                break;
+            case 'alphabetic-asc':
+                sorted.sort((a, b) => a.gameTitle.localeCompare(b.gameTitle));
+                break;
+            case 'alphabetic-desc':
+                sorted.sort((a, b) => b.gameTitle.localeCompare(a.gameTitle));
                 break;
             case 'price-asc':
                 sorted.sort((a, b) => a.currentPricePeso - b.currentPricePeso);
@@ -704,7 +709,7 @@
             case 'price-desc':
                 sorted.sort((a, b) => b.currentPricePeso - a.currentPricePeso);
                 break;
-            case 'popular':
+            case 'default':
             default:
                 // Keep original order
                 break;
@@ -814,6 +819,7 @@
     }
 
     // Initial render - fetch from API
+    loadCategories();
     fetchOwnedGames().then(() => {
         fetchGames();
         loadStoreWalletBalance();
