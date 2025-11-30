@@ -324,13 +324,13 @@ def api_get_games():
         except (ValueError, TypeError):
             min_rating = 0
 
-        # Parse and validate maximum price filter (default 5000 pesos)
+        # Parse and validate maximum price filter (default 20000 pesos)
         try:
-            max_price = float(request.args.get('max_price', 5000))
+            max_price = float(request.args.get('max_price', 20000))
             if max_price != max_price:  # NaN check using identity comparison
-                max_price = 5000
+                max_price = 20000
         except (ValueError, TypeError):
-            max_price = 5000
+            max_price = 20000
 
         # Fetch all games with valid data from database (exclude placeholders)
         games = list(db['storeGameInfo'].find({
