@@ -1,19 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Store</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-<body>
-    <div class="container">
-        <!-- Header -->
-        <header class="header">
-            <h1>🎮 Game Store</h1>
-            <p>Discover amazing games</p>
-        </header>
+{% extends "base.html" %}
 
+{% block title %}Game Store - Browse Our Collection{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Amazing Games</h1>
+            <p>Browse our collection of games and find your next favorite</p>
+        </div>
+    </section>
+
+    <div class="container">
         <!-- Filters Section -->
         <section class="filters">
             <div class="filter-group">
@@ -73,7 +70,8 @@
             <div id="gameDetails"></div>
         </div>
     </div>
+{% endblock %}
 
+{% block extra_js %}
     <script src="{{ url_for('static', filename='js/app.js') }}"></script>
-</body>
-</html>
+{% endblock %}
